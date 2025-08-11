@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Pria Aurora · B&B sul mare a Genova Pegli</title>
+  <meta name="description" content="B&B fronte mare a Pegli: camere luminose, vista, accesso alla passeggiata e consigli locali. Prenota direttamente." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <meta property="og:title" content="Pria Aurora · B&B sul mare a Genova Pegli">
+  <meta property="og:description" content="Camere luminose con vista sul mare. Prenota direttamente.">
+  <meta property="og:image" content="assets/ext-2.jpeg">
+  <style>
+    .font-sans{ font-family: Inter,system-ui,ui-sans-serif; }
+    .font-serif{ font-family: 'Playfair Display',ui-serif,Georgia; }
+    :root{ --rope:#D6AE7B; }
+    .rope-divider::after{ content:''; display:block; height:8px; background:repeating-linear-gradient(135deg,var(--rope) 0 10px,#b98f5f 10px 20px); border-radius:999px; }
+    .shadow-soft{ box-shadow:0 10px 30px rgba(0,0,0,.08);}
+  </style>
+</head>
+<body class="font-sans text-slate-800">
+  <!-- HERO -->
+  <header class="relative min-h-[70vh] md:min-h-[80vh] flex items-center">
+    <img src="assets/ext-2.jpeg" alt="Facciata storica sul mare a Pegli" class="absolute inset-0 w-full h-full object-cover opacity-70">
+    <div class="relative z-10 max-w-6xl mx-auto px-6 w-full text-center">
+      <img src="assets/logo.png" alt="Pria Aurora" class="mx-auto w-40 md:w-56 drop-shadow-lg" />
+      <h1 class="mt-6 font-serif text-4xl md:text-6xl text-white drop-shadow">Dream & Breakfast sul mare</h1>
+      <p class="mt-3 text-white/95 max-w-2xl mx-auto">Benvenuti a bordo a Genova Pegli: vista mare, comfort e piccole attenzioni.</p>
+      <div class="mt-6 flex items-center justify-center gap-3">
+        <a href="#booking" class="inline-flex items-center rounded-full bg-sky-500 px-6 py-3 text-white font-semibold hover:bg-sky-600">Prenota</a>
+        <a href="#gallery" class="inline-flex items-center rounded-full bg-white/90 px-6 py-3 backdrop-blur hover:bg-white">Galleria</a>
+      </div>
+    </div>
+  </header>
+
+  <div class="rope-divider"></div>
+
+  <!-- ABOUT / INFO -->
+  <section id="about" class="max-w-6xl mx-auto px-6 py-14">
+    <div class="grid md:grid-cols-2 gap-10 items-center">
+      <div>
+        <h2 class="font-serif text-3xl md:text-4xl">Benvenuti a bordo</h2>
+        <p class="mt-4 leading-relaxed">Siamo affacciati direttamente sul mare: svegliarsi con il suono delle onde, passeggiare tra i vicoli di Pegli e raggiungere facilmente il centro di Genova.</p>
+        <ul class="mt-6 space-y-2 text-slate-700">
+          <li><strong>Check‑in</strong> dalle 15:00 · <strong>Check‑out</strong> entro 10:30</li>
+          <li>Dispensa colazione sempre rifornita · <strong>No fumo</strong></li>
+          <li>Pet‑friendly su preavviso · biancheria extra su richiesta</li>
+        </ul>
+      </div>
+      <img src="assets/galateo-1.jpeg" class="rounded-xl shadow-soft" alt="Galateo di bordo">
+    </div>
+  </section>
+
+  <div class="rope-divider"></div>
+
+  <!-- GALLERY (con esterni nuovi) -->
+  <section id="gallery" class="max-w-6xl mx-auto px-6 py-14">
+    <h2 class="font-serif text-3xl md:text-4xl text-center">Galleria</h2>
+    <p class="mt-2 text-center text-slate-600">Esterni e scorci dal mare</p>
+    <div class="mt-8 grid sm:grid-cols-2 md:grid-cols-3 gap-4">
+      <img src="assets/ext-1.jpeg" class="rounded-lg shadow-soft" alt="Caletta rocciosa sotto casa">
+      <img src="assets/ext-2.jpeg" class="rounded-lg shadow-soft" alt="Vista lato mare e facciata storica">
+      <img src="assets/ext-3.jpeg" class="rounded-lg shadow-soft" alt="Vista mare dalla passeggiata">
+      <img src="assets/ext-4.jpeg" class="rounded-lg shadow-soft" alt="Palazzo affacciato sul mare">
+      <img src="assets/ext-6.jpeg" class="rounded-lg shadow-soft" alt="Mare limpido e scogli">
+      <img src="assets/ext-7.jpeg" class="rounded-lg shadow-soft" alt="Ingresso lato mare e scogli">
+    </div>
+    <p class="mt-8 text-center text-slate-600">Interni</p>
+    <div class="mt-4 grid sm:grid-cols-2 md:grid-cols-3 gap-4">
+      <img src="assets/room-1.jpeg" class="rounded-lg shadow-soft" alt="Camera principale">
+      <img src="assets/living-1.jpeg" class="rounded-lg shadow-soft" alt="Zona living">
+      <img src="assets/kitchen-1.jpeg" class="rounded-lg shadow-soft" alt="Cucina con vista">
+    </div>
+  </section>
+
+  <div class="rope-divider"></div>
+
+  <!-- THINGS TO DO -->
+  <section id="routes" class="max-w-6xl mx-auto px-6 py-14">
+    <h2 class="font-serif text-3xl md:text-4xl text-center">Imposta la tua rotta</h2>
+    <div class="mt-8 grid md:grid-cols-2 gap-8 items-center">
+      <ul class="space-y-3">
+        <li>Villa Pallavicini – parco storico a 5 minuti</li>
+        <li>Porto Antico – Acquario, Bigo e passeggiata</li>
+        <li>Centro storico UNESCO – Via Garibaldi, De Ferrari</li>
+        <li>NaveBus da Molo Archetti → Porto Antico</li>
+      </ul>
+      <img src="assets/itinerario-1.jpeg" class="rounded-xl shadow-soft" alt="Itinerario suggerito">
+    </div>
+  </section>
+
+  <div class="rope-divider"></div>
+
+  <!-- BOOKING / CONTACT -->
+  <section id="booking" class="max-w-5xl mx-auto px-6 py-14">
+    <h2 class="font-serif text-3xl md:text-4xl text-center">Disponibilità & Prenotazioni</h2>
+    <p class="mt-3 text-center text-slate-600">Vedi le date libere sul calendario, poi inviaci una richiesta o scrivici su WhatsApp.</p>
+    <div class="mt-8 grid md:grid-cols-2 gap-6">
+      <!-- Google Calendar embed: sostituisci il src con quello del tuo calendario pubblico -->
+      <div class="bg-white p-4 rounded-xl shadow-soft">
+        <div class="aspect-video w-full rounded-lg overflow-hidden">
+          <iframe src="https://calendar.google.com/calendar/embed?src=CALENDAR_ID&ctz=Europe%2FRome" style="border:0" width="100%" height="100%" frameborder="0" scrolling="no"></iframe>
+        </div>
+        <p class="text-xs text-slate-500 mt-2">Per inserire il tuo calendario: in Google Calendar → Impostazioni → Impostazioni per il calendario → Rendi disponibile al pubblico → Incorpora calendario → copia l'URL e incollalo qui.</p>
+      </div>
+
+      <!-- Netlify form -->
+      <form name="contact" method="POST" data-netlify="true" class="space-y-4 bg-sky-50 p-6 rounded-xl shadow-soft">
+        <input type="hidden" name="form-name" value="contact">
+        <input type="text" name="Nome" placeholder="Nome" class="w-full border rounded-lg px-4 py-2" required>
+        <input type="email" name="Email" placeholder="Email" class="w-full border rounded-lg px-4 py-2" required>
+        <div class="grid grid-cols-2 gap-3">
+          <input type="date" name="Arrivo" class="border rounded-lg px-4 py-2" required>
+          <input type="date" name="Partenza" class="border rounded-lg px-4 py-2" required>
+        </div>
+        <input type="number" name="Ospiti" placeholder="N. ospiti" class="w-full border rounded-lg px-4 py-2" min="1" required>
+        <textarea name="Messaggio" placeholder="Richieste" rows="4" class="w-full border rounded-lg px-4 py-2"></textarea>
+        <button class="w-full rounded-lg bg-sky-500 text-white font-semibold py-2 hover:bg-sky-600">Invia richiesta</button>
+        <p class="text-xs text-slate-500">Preferisci WhatsApp? <a class="underline" href="https://wa.me/393458449179" target="_blank" rel="noopener">Scrivi ad Alice</a>.</p>
+      </form>
+    </div>
+  </section>
+
+  <footer class="text-center py-10 text-sm text-slate-500">
+    © Pria Aurora · Via Benedetto Zaccaria 2/1, Genova Pegli · <a class="underline" href="https://wa.me/393458449179">WhatsApp</a>
+  </footer>
+
+  <!-- Floating WhatsApp -->
+  <a href="https://wa.me/393458449179" class="fixed bottom-5 right-5 bg-green-500 text-white rounded-full px-4 py-3 shadow-lg hover:bg-green-600" aria-label="Chat WhatsApp">
+    WhatsApp
+  </a>
+</body>
+</html>
