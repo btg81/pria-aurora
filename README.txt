@@ -1,22 +1,27 @@
-# Pria Aurora – One Page
 
-- Sito statico con Tailwind CDN
-- Galleria con foto esterne/interne
-- Sezione "Imposta la tua rotta"
-- Prenotazioni: Google Calendar embed + Netlify Forms + WhatsApp
-- Domani: incolla qui il widget Amenitiz/Lodgify/Beds24 o Booking Button
+PRIA AURORA – SITO STATICO
 
-## Istruzioni rapida pubblicazione su Netlify
+1) Personalizzazioni veloci
+- Sostituisci il numero WhatsApp (cerca `wa.me/XXXXXXXXXXX`) con il tuo in formato internazionale: es. `wa.me/39347XXXXXXX`.
+- Sostituisci il link Booking.com (cerca `href="#"`) con l’URL della tua struttura.
+- Modifica l’email nel footer.
+- Per cambiare la foto di copertina (hero) sostituisci il file indicato nello style `.hero` in `<head>`.
 
-1. Crea un nuovo sito da **New site → Deploy manually** e trascina questa cartella. Oppure collega la repo GitHub.
-2. In **Site settings → Forms**, abilita notifiche email per il form "contact".
-3. In **Domain management**, aggiungi `www` e il dominio principale (priaaurora.com).
-4. Imposta DNS sul registrar:
-   - A → 75.2.60.5
-   - A → 99.83.190.102
-   - CNAME `www` → tuo-sito.netlify.app
-5. Attiva **HTTPS** con Let's Encrypt.
+2) Aggiungere Booking.com
+- Accedi all'Extranet di Booking → Struttura > Dati di contatto > Link alla pagina (oppure visita la tua pagina pubblica e copia l’URL).
+- Incolla l’URL nel bottone "Booking.com" in `index.html`.
+- Per ottenere l’iCal: Tariffe & Disponibilità > Sincronizzazione calendario (iCal) > Esporta. Copia il link.
 
-## Google Calendar
-Sostituisci `CALENDAR_ID` nell'iframe con l'ID del tuo calendario pubblico (impostazioni → Incorpora).
+3) Aggiungere Google Calendar
+A) Importare l’iCal di Booking:
+- Google Calendar (web) → Altri calendari > + > Da URL → incolla l’iCal di Booking.
 
+B) Mostrare un calendario sul sito (opzionale):
+- Impostazioni del calendario > Integra calendario > Incorpora codice → copia l’iframe e incollalo in `index.html`.
+
+4) Deploy
+- Carica la cartella su Netlify (drag & drop) oppure da Git.
+- I form Netlify funzionano automaticamente con `data-netlify="true"`.
+
+5) Immagini
+- Ottimizzate in `assets/images/` (JPG+WebP, max 1600px).
