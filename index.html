@@ -14,27 +14,54 @@
   <style>.hero{background-image:url('assets/images/Aurora_Pegli.jpg');}</style>
 </head>
 <body class="bg-slate-50 text-slate-800">
-<header class="relative hero bg-cover bg-center bg-no-repeat">
-  <div class="absolute inset-0 bg-black/35"></div>
-  <div class="relative max-w-6xl mx-auto px-4 pt-6 pb-24 sm:pb-40">
-    <div class="flex items-center justify-between">
-      <a href="/" class="inline-flex items-center gap-3">
-        <img src="assets/logo.png" alt="Pria Aurora" class="logo-img drop-shadow"/>
-        <span class="sr-only">Pria Aurora</span>
-      </a>
-      <nav class="text-white/90 font-medium flex items-center gap-4">
-        <a href="/en/" class="underline">English</a>
-        <a href="#booking" class="px-4 py-2 rounded-full bg-emerald-500 hover:bg-emerald-600 text-white">Prenota</a>
-      </nav>
-    </div>
-    <div class="mt-12 sm:mt-24 max-w-3xl">
-      <h1 class="text-white text-4xl sm:text-6xl font-bold leading-tight shadow-text">Dream & Breakfast sul mare</h1>
-      <p class="mt-4 text-white/90 text-lg shadow-text">Benvenuti su PriaAurora.com — Pegli, Genova.</p>
-      <div class="mt-6 flex flex-wrap gap-3">
-        <a href="#booking" class="px-6 py-3 rounded-full bg-sky-500 hover:bg-sky-600 text-white font-semibold">Prenota</a>
-        <a href="#gallery" class="px-6 py-3 rounded-full bg-white/90 hover:bg-white text-slate-900 font-semibold">Galleria</a>
-        <a href="https://wa.me/393458449179?text=Ciao Pria Aurora, vorrei informazioni di prenotazione" class="px-6 py-3 rounded-full bg-emerald-500 hover:bg-emerald-600 text-white font-semibold">WhatsApp</a>
+<header class="hero" style="background-image:url('assets/images/aurora_Pegli.jpg')">
+  <div class="hero__stage max-w-6xl mx-auto px-4">
+    <!-- Lingua in alto a destra -->
+    <div class="hero__lang"><a href="/en/">English</a></div>
+
+    <!-- Centro: logo + titolo + CTA -->
+    <div class="hero__center">
+      <img src="assets/logo.png" alt="Pria Aurora" class="hero__brand">
+      <h1 class="hero__title">Dream &amp; Breakfast sul mare</h1>
+      <p class="hero__subtitle">Benvenuti su PriaAurora.com — Pegli, Genova.</p>
+
+      <div class="hero__cta">
+        <a href="#booking" class="btn btn--primary">Prenota</a>
+        <a href="#gallery" class="btn btn--light">Galleria</a>
+        <a href="https://wa.me/393458449179?text=Carissima%20Alice,%20Comandante%20di%20Pria%20Aurora,%2C%20vorrei%20informazioni%20di%20prenotazione"
+           class="btn btn--whatsapp">WhatsApp</a>
       </div>
+    </div>
+
+    <!-- Dock basso sinistra: gallery/prenota + loghi + whatsapp -->
+    <div class="hero__dockLeft">
+      <a href="#booking" class="btn btn--primary">Prenota</a>
+      <a href="#gallery" class="btn btn--light">Galleria</a>
+
+      <a class="pill-icon" href="#" aria-label="Booking.com">
+        <img src="assets/icons/booking.svg" alt="">
+      </a>
+      <a class="pill-icon" href="#" aria-label="Airbnb">
+        <img src="assets/icons/airbnb.svg" alt="">
+      </a>
+
+      <a class="btn btn--whatsapp" href="https://wa.me/393458449179">WhatsApp</a>
+    </div>
+
+    <!-- Dock basso destra: social -->
+    <div class="hero__dockRight">
+      <a class="social" href="https://www.facebook.com/share/16jDfU6vb7/?mibextid=wwXIfr" aria-label="Facebook">
+        <img src="assets/icons/facebook.svg" alt="">
+      </a>
+      <a class="social" href="#" aria-label="Instagram">
+        <img src="assets/icons/instagram.svg" alt="">
+      </a>
+      <a class="social" href="#" aria-label="TikTok">
+        <img src="assets/icons/tiktok.svg" alt="">
+      </a>
+      <a class="social" href="https://wa.me/393458449179" aria-label="WhatsApp">
+        <img src="assets/icons/whatsapp.svg" alt="">
+      </a>
     </div>
   </div>
 </header>
