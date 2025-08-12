@@ -1,10 +1,9 @@
 /* =========================================================
-   PRIA AURORA — CSS v2.3
-   - hero full-bleed 100svh
-   - logo più grande
-   - social orizzontali bottom-right (non sovrapposti al WA flottante)
-   - dock prenota/booking/airbnb/wa bottom-left
-   - NON nasconde il vecchio bottone WhatsApp flottante
+   PRIA AURORA — CSS v2.4
+   - Hero full-bleed 100svh + effetto cinema
+   - Logo più grande
+   - Dock UNICO in basso a SINISTRA (prenota + booking/airbnb + social)
+   - WhatsApp flottante fisso in basso a destra (non toccato)
    ========================================================= */
 
 /* ---------- Variabili ---------- */
@@ -13,44 +12,48 @@
   --rope-height: 12px;
 
   /* Hero */
-  --hero-min-h-mobile: 100svh;     /* pieno schermo su mobile */
-  --hero-min-h-desktop: 100svh;    /* pieno schermo su desktop */
-  --hero-top-shift: 32%;           /* più piccolo = più in alto lo stack */
+  --hero-min-h-mobile: 100svh;
+  --hero-min-h-desktop: 100svh;
+  --hero-top-shift: 32%;     /* più piccolo = più in alto lo stack */
 
-  /* Logo (più grande) */
+  /* Logo */
   --brand-w-sm: 210px;
   --brand-w-md: 260px;
   --brand-w-lg: 320px;
 
-  --text-shadow: 0 2px 14px rgba(0,0,0,.35);
+  /* Bottoni / icone */
   --btn-radius: 999px;
+  --text-shadow: 0 2px 14px rgba(0,0,0,.35);
 
-  /* Social sizes */
-  --social-size-mobile: 30px;
-  --social-size-tablet: 34px;
-  --social-size-desktop: 38px;
+  /* Dimensioni icone tonde (Airbnb/Booking/Social) */
+  --icon-size-mobile: 30px;
+  --icon-size-tablet: 34px;
+  --icon-size-desktop: 38px;
+
+  /* Spazi dock */
+  --dock-gap: 10px;
+  --dock-inset-x: 12px;      /* quanto dista dal bordo sinistro su mobile */
+  --dock-inset-y: 16px;      /* quanto dista dal bordo basso su mobile */
+}
+@media (min-width:640px){
+  :root{ --dock-inset-x: 22px; --dock-inset-y: 24px; }
+}
+@media (min-width:1024px){
+  :root{ --dock-inset-x: 34px; --dock-inset-y: 34px; }
 }
 
-/* ---------- HERO full-bleed + cinema ---------- */
+/* ---------- HERO + cinema ---------- */
 .hero{
-  position: relative;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  position:relative;
+  background-size:cover; background-position:center; background-repeat:no-repeat;
   min-height: var(--hero-min-h-mobile);
 }
-@media (min-width: 1024px){
-  .hero{ min-height: var(--hero-min-h-desktop); }
-}
+@media (min-width:1024px){ .hero{ min-height: var(--hero-min-h-desktop); } }
 
-/* overlay uniforme */
 .hero::before{
   content:""; position:absolute; inset:0;
-  background: rgba(0,0,0,.30);
-  pointer-events:none;
+  background: rgba(0,0,0,.30); pointer-events:none;
 }
-
-/* vignetta cinema */
 .hero::after{
   content:""; position:absolute; inset:0;
   background:
@@ -58,19 +61,15 @@
     linear-gradient(to bottom, rgba(0,0,0,.48), rgba(0,0,0,0) 22%, rgba(0,0,0,0) 78%, rgba(0,0,0,.46));
   pointer-events:none;
 }
-
 .hero__stage{ position:relative; min-height:inherit; }
 
 /* ---------- Stack centrale ---------- */
 .hero__center{
-  position:absolute; left:50%;
-  top:var(--hero-top-shift);
+  position:absolute; left:50%; top:var(--hero-top-shift);
   transform:translate(-50%,-50%);
-  text-align:center; color:#fff;
-  text-shadow: var(--text-shadow);
+  text-align:center; color:#fff; text-shadow:var(--text-shadow);
   display:flex; flex-direction:column; align-items:center; gap:12px;
 }
-
 .hero__brand{
   width:var(--brand-w-sm); height:auto; object-fit:contain;
   filter: drop-shadow(0 6px 18px rgba(0,0,0,.35));
@@ -78,15 +77,8 @@
 @media(min-width:640px){ .hero__brand{ width:var(--brand-w-md); } }
 @media(min-width:1024px){ .hero__brand{ width:var(--brand-w-lg); } }
 
-.hero__title{
-  font-weight:800; line-height:1.06;
-  font-size: clamp(28px, 4.4vw, 56px);
-  margin-top:6px;
-}
-.hero__subtitle{
-  font-size: clamp(14px, 1.5vw, 18px);
-  opacity:.95;
-}
+.hero__title{ font-weight:800; line-height:1.06; font-size:clamp(28px,4.4vw,56px); margin-top:6px; }
+.hero__subtitle{ font-size:clamp(14px,1.5vw,18px); opacity:.95; }
 .hero__cta{ display:flex; justify-content:center; gap:10px; margin-top:10px; }
 
 /* ---------- Lingua (alto a destra) ---------- */
@@ -95,20 +87,18 @@
 }
 .hero__lang a{ color:#fff; text-decoration:underline; text-shadow:var(--text-shadow); }
 
-/* ---------- Dock basso sinistra ---------- */
+/* ---------- DOCK UNICO in basso a SINISTRA ---------- */
 .hero__dockLeft{
-  position:absolute; left:clamp(12px,4vw,40px);
-  bottom:clamp(16px,4vw,40px);
-  display:flex; align-items:center; gap:10px; flex-wrap:wrap; z-index:10;
-  padding-bottom: calc(var(--rope-height) * .25);
+  position:absolute;
+  left:clamp(var(--dock-inset-x), 4vw, 40px);
+  bottom:clamp(var(--dock-inset-y), 4vw, 40px);
+  display:flex; align-items:center; gap:var(--dock-gap); flex-wrap:wrap;
+  z-index:10;
 }
 
-/* ---------- Social basso destra (orizzontale) ----------
-   li sposto un filo più in alto per lasciare spazio al WA flottante */
-.hero__dockRight{
-  position:absolute; right:clamp(12px,4vw,40px);
-  bottom:clamp(64px,6vw,88px);   /* ↑ spazio per il bubble WA globale */
-  display:flex; flex-direction:row; gap:10px; z-index:10; flex-wrap:wrap;
+/* Se vuoi ordinare in due righe compatte su mobile */
+.hero__dockLeft .row{
+  display:flex; align-items:center; gap:var(--dock-gap);
 }
 
 /* ---------- Bottoni / Pill ---------- */
@@ -124,32 +114,25 @@
 .btn--primary:hover{ background:#0284c7; }
 .btn--light{ background:rgba(255,255,255,.92); color:#0f172a; }
 .btn--light:hover{ background:#fff; }
-.btn--whatsapp{ background:#22c55e; color:#fff; }
-.btn--whatsapp:hover{ background:#16a34a; }
 
 /* Icone rotonde (Airbnb, Booking e Social) */
-.pill-icon,
-.social{
-  width:var(--social-size-mobile);
-  height:var(--social-size-mobile);
-  border-radius:999px;
-  display:grid; place-items:center;
+.pill-icon, .social{
+  width:var(--icon-size-mobile); height:var(--icon-size-mobile);
+  border-radius:999px; display:grid; place-items:center;
   background:rgba(255,255,255,.92);
   border:1px solid rgba(15,23,42,.08);
   box-shadow:0 6px 16px rgba(0,0,0,.22);
-  transition: transform .15s ease, box-shadow .15s ease, background .2s ease;
+  transition: transform .15s ease, background .2s ease;
 }
-.pill-icon img, .social img{ width:calc(0.6 * var(--social-size-mobile)); height:auto; display:block; }
+.pill-icon img, .social img{ width:60%; height:auto; display:block; }
+.pill-icon:hover, .social:hover{ transform:translateY(-2px); background:#fff; }
 
 @media(min-width:640px){
-  .pill-icon, .social{ width:var(--social-size-tablet); height:var(--social-size-tablet); }
-  .pill-icon img, .social img{ width:calc(0.6 * var(--social-size-tablet)); }
+  .pill-icon, .social{ width:var(--icon-size-tablet); height:var(--icon-size-tablet); }
 }
 @media(min-width:1024px){
-  .pill-icon, .social{ width:var(--social-size-desktop); height:var(--social-size-desktop); }
-  .pill-icon img, .social img{ width:calc(0.6 * var(--social-size-desktop)); }
+  .pill-icon, .social{ width:var(--icon-size-desktop); height:var(--icon-size-desktop); }
 }
-.pill-icon:hover, .social:hover{ transform:translateY(-2px); background:#fff; }
 
 /* ---------- Corda divisoria ---------- */
 .section-rope{
@@ -159,18 +142,10 @@
   height:var(--rope-height);
 }
 
-/* ---------- Generali ---------- */
-.logo-img{ width:14rem; height:auto; }
-@media(min-width:640px){ .logo-img{ width:14rem; } }
-@media(min-width:1024px){ .logo-img{ width:18rem; } }
-
+/* ---------- Vari ---------- */
 .shadow-text{ text-shadow: var(--text-shadow); }
-
 .gallery img{ transition: transform .25s ease, opacity .25s ease; will-change: transform, opacity; }
 .gallery a:hover img{ transform:scale(1.02); opacity:.95; }
 
-section h2{ letter-spacing:.1px; }
-
-/* IMPORTANTE: non nascondiamo più il vecchio bottone WA flottante */
-/* (se avevi questa regola, cancellala)
-a.fixed.bottom-5.right-5{ display:none !important; } */
+/* NON nascondere il WA flottante globale. Se hai questa regola, eliminala:
+   a.fixed.bottom-5.right-5{ display:none !important; } */
