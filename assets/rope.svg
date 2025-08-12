@@ -1,1 +1,15 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="24" viewBox="0 0 1600 24" preserveAspectRatio="none"><defs><linearGradient id="g" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#caa35c"/><stop offset="100%" stop-color="#a67c2e"/></linearGradient><pattern id="twist" patternUnits="userSpaceOnUse" width="40" height="24"><path d="M-10,24 C-5,0 5,0 10,24 S25,24 30,0 S45,0 50,24" fill="none" stroke="url(#g)" stroke-width="8"/><path d="M-5,24 C0,8 10,8 15,24 S30,24 35,8 S50,8 55,24" fill="none" stroke="#d9b978" stroke-width="4"/></pattern></defs><rect width="1600" height="24" fill="url(#twist)"/></svg>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 60" preserveAspectRatio="none">
+  <defs>
+    <linearGradient id="g" x1="0" x2="0" y1="0" y2="1">
+      <stop offset="0%" stop-color="#d8b073"/>
+      <stop offset="100%" stop-color="#a87a3a"/>
+    </linearGradient>
+    <pattern id="rope" width="40" height="60" patternUnits="userSpaceOnUse" patternTransform="rotate(12)">
+      <rect width="40" height="60" fill="url(#g)"/>
+      <path d="M0,10 C10,20 30,0 40,10 M0,30 C10,40 30,20 40,30 M0,50 C10,60 30,40 40,50" stroke="#cfa25b" stroke-width="8" fill="none" opacity="0.6"/>
+      <path d="M0,15 C10,25 30,5 40,15 M0,35 C10,45 30,25 40,35" stroke="#8d6428" stroke-width="3" fill="none" opacity="0.7"/>
+    </pattern>
+  </defs>
+  <rect width="1200" height="60" fill="url(#rope)"/>
+</svg>

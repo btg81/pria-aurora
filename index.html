@@ -1,64 +1,185 @@
-
-<!DOCTYPE html>
+<!doctype html>
 <html lang="it">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pria Aurora BnB</title>
-    <link rel="icon" href="assets/logo.png" type="image/png">
-    <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Pria Aurora – Dream & Breakfast sul mare | Pegli Genova</title>
+  <meta name="description" content="B&B sul mare a Pegli (Genova Ponente). Vista mare, comfort e piccole attenzioni. Prenota direttamente al miglior prezzo."/>
+  <meta name="keywords" content="Pegli, Genova, B&B, bed and breakfast, casa al mare, hotel, Genova Ponente, mare, scogli, vista mare"/>
+  <link rel="icon" href="assets/logo_B.png" type="image/png"/>
+  <link rel="alternate" hreflang="en" href="/en/"/>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="assets/css/style.css"/>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "LodgingBusiness", "name": "Pria Aurora \u2013 Dream & Breakfast", "url": "https://priaaurora.com/", "image": ["https://priaaurora.com/assets/images/A_mobile-friendly_webpage_for_\"Pria_Aurora_Dream_a.jpg"], "address": {"@type": "PostalAddress", "streetAddress": "Via Benedetto Zaccaria 2/1", "addressLocality": "Genova Pegli", "postalCode": "16155", "addressCountry": "IT"}, "telephone": "+39 345 8449179", "amenityFeature": [{"@type": "LocationFeatureSpecification", "name": "Aria condizionata in tutte le stanze", "value": true}, {"@type": "LocationFeatureSpecification", "name": "Smart TV in ogni camera (65\u201d in salone) con Disney+, Netflix, Prime Video", "value": true}, {"@type": "LocationFeatureSpecification", "name": "Wi\u2011Fi ad alta velocit\u00e0", "value": true}, {"@type": "LocationFeatureSpecification", "name": "Cucina completa: induzione, lavastoviglie, forno, microonde, Nespresso Vertuo", "value": true}, {"@type": "LocationFeatureSpecification", "name": "Tavolo da pranzo allungabile e penisola per colazioni intime", "value": true}, {"@type": "LocationFeatureSpecification", "name": "Vista mare e tre finestre affacciate sugli scogli", "value": true}, {"@type": "LocationFeatureSpecification", "name": "Bagno con doppi lavabi, sanitari sospesi e doccia a pioggia", "value": true}, {"@type": "LocationFeatureSpecification", "name": "Pet\u2011friendly su preavviso", "value": true}]}</script>
+  <style>.hero{background-image:url('assets/images/A_mobile-friendly_webpage_for_"Pria_Aurora_Dream_a.jpg');}</style>
 </head>
-<body>
-<header>
-    <img src="assets/logo.png" alt="Pria Aurora Logo" class="logo">
-    <h1>Benvenuti a bordo di PriaAurora.com</h1>
+<body class="bg-slate-50 text-slate-800">
+<header class="relative hero bg-cover bg-center bg-no-repeat">
+  <div class="absolute inset-0 bg-black/35"></div>
+  <div class="relative max-w-6xl mx-auto px-4 pt-6 pb-24 sm:pb-40">
+    <div class="flex items-center justify-between">
+      <a href="/" class="inline-flex items-center gap-3">
+        <img src="assets/logo.png" alt="Pria Aurora" class="logo-img drop-shadow"/>
+        <span class="sr-only">Pria Aurora</span>
+      </a>
+      <nav class="text-white/90 font-medium flex items-center gap-4">
+        <a href="/en/" class="underline">English</a>
+        <a href="#booking" class="px-4 py-2 rounded-full bg-emerald-500 hover:bg-emerald-600 text-white">Prenota</a>
+      </nav>
+    </div>
+    <div class="mt-12 sm:mt-24 max-w-3xl">
+      <h1 class="text-white text-4xl sm:text-6xl font-bold leading-tight shadow-text">Dream & Breakfast sul mare</h1>
+      <p class="mt-4 text-white/90 text-lg shadow-text">Benvenuti su PriaAurora.com — Pegli, Genova.</p>
+      <div class="mt-6 flex flex-wrap gap-3">
+        <a href="#booking" class="px-6 py-3 rounded-full bg-sky-500 hover:bg-sky-600 text-white font-semibold">Prenota</a>
+        <a href="#gallery" class="px-6 py-3 rounded-full bg-white/90 hover:bg-white text-slate-900 font-semibold">Galleria</a>
+        <a href="https://wa.me/393458449179?text=Ciao Pria Aurora, vorrei informazioni di prenotazione" class="px-6 py-3 rounded-full bg-emerald-500 hover:bg-emerald-600 text-white font-semibold">WhatsApp</a>
+      </div>
+    </div>
+  </div>
 </header>
 
-<section id="welcome">
-    <h2>Benvenuti a bordo</h2>
-    <p>Un rifugio unico sul mare di Pegli, Genova Ponente. Comfort, vista mozzafiato e un'atmosfera marinaresca.</p>
-</section>
+<div class="section-rope" aria-hidden="true"></div>
 
-<section id="comfort">
-    <h2>Comfort inclusi</h2>
-    <ul>
-        <li>Wi-Fi veloce</li>
-        <li>Smart TV 65” con Disney+, Netflix e Prime Video</li>
-        <li>Cucina attrezzata</li>
-        <li>Vista mare</li>
-    </ul>
-</section>
-
-<section id="gallery">
-    <h2>Galleria fotografica</h2>
-    <div class="gallery">
-        <img src="images/foto1.jpg" alt="Vista mare">
-        <img src="images/foto2.jpg" alt="Salone">
+<main>
+  <section id="about" class="max-w-6xl mx-auto px-4 py-12 sm:py-16">
+    <div class="grid md:grid-cols-2 gap-8 items-start">
+      <div>
+        <h2 class="text-2xl font-semibold mb-3">Benvenuti a bordo</h2>
+        <p class="leading-relaxed whitespace-pre-line">Il nostro Dream & Breakfast si affaccia direttamente sul mare, incastonato tra gli scogli di Pegli.
+Una posizione strategica e silenziosissima: bus, stazione e imbarco per il Porto Antico sono a pochi minuti.
+Sotto il livello della strada, davanti soltanto il blu. Dalla finestra, l’unico suono è quello delle onde.</p>
+        <h3 class="mt-6 text-xl font-semibold">Comfort inclusi</h3>
+        <ul class="list-disc pl-6 mt-2 space-y-1">
+          <li>Aria condizionata in tutte le stanze</li><li>Smart TV in ogni camera (65” in salone) con Disney+, Netflix, Prime Video</li><li>Wi‑Fi ad alta velocità</li><li>Cucina completa: induzione, lavastoviglie, forno, microonde, Nespresso Vertuo</li><li>Tavolo da pranzo allungabile e penisola per colazioni intime</li><li>Vista mare e tre finestre affacciate sugli scogli</li><li>Bagno con doppi lavabi, sanitari sospesi e doccia a pioggia</li><li>Pet‑friendly su preavviso</li>
+        </ul>
+      </div>
+      <div class='rounded-xl overflow-hidden shadow'><img src='assets/images/00817E89-058E-4A1A-B953-C8DBE77441B8.jpg' class='w-full h-full object-cover' alt='Sea view' loading='lazy'/></div>
     </div>
-</section>
+  </section>
 
-<section id="route">
-    <h2>Imposta la tua rotta</h2>
-    <ul>
-        <li>Villa Pallavicini – parco storico a 5 minuti</li>
-        <li>Porto Antico – Acquario, Bigo e passeggiata</li>
-        <li>Centro storico UNESCO – Via Garibaldi, De Ferrari</li>
-        <li>NaveBus da Molo Archetti → Porto Antico</li>
+  <div class="section-rope" aria-hidden="true"></div>
+
+  <section id="gallery" class="bg-white border-y">
+    <div class="max-w-6xl mx-auto px-4 py-12 sm:py-16">
+      <h2 class="text-2xl font-semibold mb-6">Galleria</h2>
+      <div class="gallery grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3">
+        <a href="assets/images/A_mobile-friendly_webpage_for_"Pria_Aurora_Dream_a.jpg" target="_blank" class="group block rounded-lg overflow-hidden border"><img src="assets/images/A_mobile-friendly_webpage_for_"Pria_Aurora_Dream_a.jpg" alt="Pria Aurora" loading="lazy" class="w-full h-40 object-cover group-hover:opacity-90"/></a>
+<a href="assets/images/00817E89-058E-4A1A-B953-C8DBE77441B8.jpg" target="_blank" class="group block rounded-lg overflow-hidden border"><img src="assets/images/00817E89-058E-4A1A-B953-C8DBE77441B8.jpg" alt="Pria Aurora" loading="lazy" class="w-full h-40 object-cover group-hover:opacity-90"/></a>
+<a href="assets/images/03E083B0-735E-42A8-BADF-27B0EEB1C480.jpg" target="_blank" class="group block rounded-lg overflow-hidden border"><img src="assets/images/03E083B0-735E-42A8-BADF-27B0EEB1C480.jpg" alt="Pria Aurora" loading="lazy" class="w-full h-40 object-cover group-hover:opacity-90"/></a>
+<a href="assets/images/0480F1A5-DDFA-48E1-B111-47B366BCEFEB.jpg" target="_blank" class="group block rounded-lg overflow-hidden border"><img src="assets/images/0480F1A5-DDFA-48E1-B111-47B366BCEFEB.jpg" alt="Pria Aurora" loading="lazy" class="w-full h-40 object-cover group-hover:opacity-90"/></a>
+<a href="assets/images/06391DDB-ED64-4040-B1CE-4F540FAA0EFB.jpg" target="_blank" class="group block rounded-lg overflow-hidden border"><img src="assets/images/06391DDB-ED64-4040-B1CE-4F540FAA0EFB.jpg" alt="Pria Aurora" loading="lazy" class="w-full h-40 object-cover group-hover:opacity-90"/></a>
+<a href="assets/images/076EA073-08CA-4F1C-9093-D506755ACEB8.jpg" target="_blank" class="group block rounded-lg overflow-hidden border"><img src="assets/images/076EA073-08CA-4F1C-9093-D506755ACEB8.jpg" alt="Pria Aurora" loading="lazy" class="w-full h-40 object-cover group-hover:opacity-90"/></a>
+<a href="assets/images/0B442338-E570-4A8B-90B4-847623991D73.jpg" target="_blank" class="group block rounded-lg overflow-hidden border"><img src="assets/images/0B442338-E570-4A8B-90B4-847623991D73.jpg" alt="Pria Aurora" loading="lazy" class="w-full h-40 object-cover group-hover:opacity-90"/></a>
+<a href="assets/images/0E39685A-B3CC-4384-99A4-91C7979A1D7C.jpg" target="_blank" class="group block rounded-lg overflow-hidden border"><img src="assets/images/0E39685A-B3CC-4384-99A4-91C7979A1D7C.jpg" alt="Pria Aurora" loading="lazy" class="w-full h-40 object-cover group-hover:opacity-90"/></a>
+<a href="assets/images/10B2CADF-4621-4D2A-815D-2BD2EE5A0449.jpg" target="_blank" class="group block rounded-lg overflow-hidden border"><img src="assets/images/10B2CADF-4621-4D2A-815D-2BD2EE5A0449.jpg" alt="Pria Aurora" loading="lazy" class="w-full h-40 object-cover group-hover:opacity-90"/></a>
+<a href="assets/images/12B48331-AB5B-41B1-BF76-7E2CFCAB3A38.jpg" target="_blank" class="group block rounded-lg overflow-hidden border"><img src="assets/images/12B48331-AB5B-41B1-BF76-7E2CFCAB3A38.jpg" alt="Pria Aurora" loading="lazy" class="w-full h-40 object-cover group-hover:opacity-90"/></a>
+<a href="assets/images/13AEA2E1-43FF-40E9-B1C5-B8059740449B.jpg" target="_blank" class="group block rounded-lg overflow-hidden border"><img src="assets/images/13AEA2E1-43FF-40E9-B1C5-B8059740449B.jpg" alt="Pria Aurora" loading="lazy" class="w-full h-40 object-cover group-hover:opacity-90"/></a>
+<a href="assets/images/15329580-59F8-4574-AD3B-766A3D90A388.jpg" target="_blank" class="group block rounded-lg overflow-hidden border"><img src="assets/images/15329580-59F8-4574-AD3B-766A3D90A388.jpg" alt="Pria Aurora" loading="lazy" class="w-full h-40 object-cover group-hover:opacity-90"/></a>
+<a href="assets/images/15643D66-9D2C-459E-BD3F-80A12EB73B62.jpg" target="_blank" class="group block rounded-lg overflow-hidden border"><img src="assets/images/15643D66-9D2C-459E-BD3F-80A12EB73B62.jpg" alt="Pria Aurora" loading="lazy" class="w-full h-40 object-cover group-hover:opacity-90"/></a>
+<a href="assets/images/19DB8A23-1F11-47D6-BDCF-D47C9CFEE9DF.jpg" target="_blank" class="group block rounded-lg overflow-hidden border"><img src="assets/images/19DB8A23-1F11-47D6-BDCF-D47C9CFEE9DF.jpg" alt="Pria Aurora" loading="lazy" class="w-full h-40 object-cover group-hover:opacity-90"/></a>
+<a href="assets/images/1BD8BB9E-ADB9-4DC6-8105-195C4A7330AE.jpg" target="_blank" class="group block rounded-lg overflow-hidden border"><img src="assets/images/1BD8BB9E-ADB9-4DC6-8105-195C4A7330AE.jpg" alt="Pria Aurora" loading="lazy" class="w-full h-40 object-cover group-hover:opacity-90"/></a>
+<a href="assets/images/1ED25CF1-44DB-4F8F-9D3D-03B0AE4E26C2.jpg" target="_blank" class="group block rounded-lg overflow-hidden border"><img src="assets/images/1ED25CF1-44DB-4F8F-9D3D-03B0AE4E26C2.jpg" alt="Pria Aurora" loading="lazy" class="w-full h-40 object-cover group-hover:opacity-90"/></a>
+<a href="assets/images/1FF90346-9BF9-4AD6-A7F4-D92526BE06D1.jpg" target="_blank" class="group block rounded-lg overflow-hidden border"><img src="assets/images/1FF90346-9BF9-4AD6-A7F4-D92526BE06D1.jpg" alt="Pria Aurora" loading="lazy" class="w-full h-40 object-cover group-hover:opacity-90"/></a>
+<a href="assets/images/232E6318-3B7F-4EEC-8BF5-B45927DFB470.jpg" target="_blank" class="group block rounded-lg overflow-hidden border"><img src="assets/images/232E6318-3B7F-4EEC-8BF5-B45927DFB470.jpg" alt="Pria Aurora" loading="lazy" class="w-full h-40 object-cover group-hover:opacity-90"/></a>
+<a href="assets/images/23C74939-B578-48DD-96EB-4F7D9F4D21F5.jpg" target="_blank" class="group block rounded-lg overflow-hidden border"><img src="assets/images/23C74939-B578-48DD-96EB-4F7D9F4D21F5.jpg" alt="Pria Aurora" loading="lazy" class="w-full h-40 object-cover group-hover:opacity-90"/></a>
+<a href="assets/images/265C4D7E-E3DA-47E3-81CD-92AB029172BC.jpg" target="_blank" class="group block rounded-lg overflow-hidden border"><img src="assets/images/265C4D7E-E3DA-47E3-81CD-92AB029172BC.jpg" alt="Pria Aurora" loading="lazy" class="w-full h-40 object-cover group-hover:opacity-90"/></a>
+<a href="assets/images/26775664-7D47-4C40-867C-1C51BDC989EF.jpg" target="_blank" class="group block rounded-lg overflow-hidden border"><img src="assets/images/26775664-7D47-4C40-867C-1C51BDC989EF.jpg" alt="Pria Aurora" loading="lazy" class="w-full h-40 object-cover group-hover:opacity-90"/></a>
+<a href="assets/images/28A3B553-D39C-4429-982B-F3C010A10B9C.jpg" target="_blank" class="group block rounded-lg overflow-hidden border"><img src="assets/images/28A3B553-D39C-4429-982B-F3C010A10B9C.jpg" alt="Pria Aurora" loading="lazy" class="w-full h-40 object-cover group-hover:opacity-90"/></a>
+<a href="assets/images/2AAECBB9-ED56-496A-B575-A4EF9B573A0E.jpg" target="_blank" class="group block rounded-lg overflow-hidden border"><img src="assets/images/2AAECBB9-ED56-496A-B575-A4EF9B573A0E.jpg" alt="Pria Aurora" loading="lazy" class="w-full h-40 object-cover group-hover:opacity-90"/></a>
+<a href="assets/images/2C2655CE-EBD9-4530-84C8-110EFDC64988.jpg" target="_blank" class="group block rounded-lg overflow-hidden border"><img src="assets/images/2C2655CE-EBD9-4530-84C8-110EFDC64988.jpg" alt="Pria Aurora" loading="lazy" class="w-full h-40 object-cover group-hover:opacity-90"/></a>
+<a href="assets/images/300B641B-516E-43C5-BCE2-C3691C13F1BA.jpg" target="_blank" class="group block rounded-lg overflow-hidden border"><img src="assets/images/300B641B-516E-43C5-BCE2-C3691C13F1BA.jpg" alt="Pria Aurora" loading="lazy" class="w-full h-40 object-cover group-hover:opacity-90"/></a>
+<a href="assets/images/3233E8CD-9C87-48DB-B628-62FF92261260.jpg" target="_blank" class="group block rounded-lg overflow-hidden border"><img src="assets/images/3233E8CD-9C87-48DB-B628-62FF92261260.jpg" alt="Pria Aurora" loading="lazy" class="w-full h-40 object-cover group-hover:opacity-90"/></a>
+<a href="assets/images/3247FE76-6407-4DD4-8F74-878AF0F3CA19.jpg" target="_blank" class="group block rounded-lg overflow-hidden border"><img src="assets/images/3247FE76-6407-4DD4-8F74-878AF0F3CA19.jpg" alt="Pria Aurora" loading="lazy" class="w-full h-40 object-cover group-hover:opacity-90"/></a>
+<a href="assets/images/32EC9A0A-C5EE-4066-B131-5027C6C2056A.jpg" target="_blank" class="group block rounded-lg overflow-hidden border"><img src="assets/images/32EC9A0A-C5EE-4066-B131-5027C6C2056A.jpg" alt="Pria Aurora" loading="lazy" class="w-full h-40 object-cover group-hover:opacity-90"/></a>
+<a href="assets/images/360D19B5-290F-45A0-84B9-B9687825B103.jpg" target="_blank" class="group block rounded-lg overflow-hidden border"><img src="assets/images/360D19B5-290F-45A0-84B9-B9687825B103.jpg" alt="Pria Aurora" loading="lazy" class="w-full h-40 object-cover group-hover:opacity-90"/></a>
+<a href="assets/images/3756DB6B-211A-4A75-99F1-5122E3CE6AD0.jpg" target="_blank" class="group block rounded-lg overflow-hidden border"><img src="assets/images/3756DB6B-211A-4A75-99F1-5122E3CE6AD0.jpg" alt="Pria Aurora" loading="lazy" class="w-full h-40 object-cover group-hover:opacity-90"/></a>
+<a href="assets/images/399D7398-565A-4F3C-8863-BDD9F471798C.jpg" target="_blank" class="group block rounded-lg overflow-hidden border"><img src="assets/images/399D7398-565A-4F3C-8863-BDD9F471798C.jpg" alt="Pria Aurora" loading="lazy" class="w-full h-40 object-cover group-hover:opacity-90"/></a>
+<a href="assets/images/39CDFF85-14C8-432B-97CE-CC2B612FBEF0.jpg" target="_blank" class="group block rounded-lg overflow-hidden border"><img src="assets/images/39CDFF85-14C8-432B-97CE-CC2B612FBEF0.jpg" alt="Pria Aurora" loading="lazy" class="w-full h-40 object-cover group-hover:opacity-90"/></a>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-rope" aria-hidden="true"></div>
+
+  <section id="route" class="max-w-6xl mx-auto px-4 py-12 sm:py-16">
+    <h2 class="text-2xl font-semibold mb-4">Imposta la tua rotta</h2>
+    <ul class="list-disc pl-6 space-y-1">
+      <li>Villa Pallavicini – parco storico a 5 minuti</li><li>Porto Antico – Acquario, Bigo e passeggiata</li><li>Centro storico UNESCO – Via Garibaldi, De Ferrari</li><li>NaveBus da Molo Archetti → Porto Antico</li>
     </ul>
-</section>
+  </section>
 
-<section id="availability">
-    <h2>Disponibilità e prenotazioni</h2>
-    <iframe src="https://calendar.google.com/calendar/embed?src=a4c463ed950c9adf48c4b052b3d8fc68cf1c69cdcb63250a48f09bb837139c41%40group.calendar.google.com&ctz=Europe%2FRome" style="border: 0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
-</section>
+  <div class="section-rope" aria-hidden="true"></div>
 
-<section id="location">
-    <h2>Dove siamo</h2>
-    <p>Pegli, Genova Ponente - sul mare.</p>
-</section>
+  <section id="booking" class="max-w-6xl mx-auto px-4 py-12 sm:py-16">
+    <div class="grid md:grid-cols-2 gap-10 items-start">
+      <div>
+        <h2 class="text-2xl font-semibold mb-4">Disponibilità e prenotazioni</h2>
+        <div class="rounded-xl overflow-hidden shadow">
+          <iframe src="https://calendar.google.com/calendar/embed?src=a4c463ed950c9adf48c4b052b3d8fc68cf1c69cdcb63250a48f09bb837139c41%40group.calendar.google.com&ctz=Europe%2FRome" style="border:0" width="100%" height="450" frameborder="0" scrolling="no" loading="lazy"></iframe>
+        </div>
+        <p class="text-sm mt-3 text-slate-600">Oppure dai portali.</p>
+      </div>
+      <form name="contact" method="POST" data-netlify="true" class="bg-white rounded-xl shadow p-6 space-y-4">
+        <input type="hidden" name="form-name" value="contact"/>
+        <div>
+          <label class="block text-sm font-medium">Nome</label>
+          <input name="nome" required class="mt-1 w-full border rounded-lg px-3 py-2"/>
+        </div>
+        <div class="grid sm:grid-cols-2 gap-4">
+          <div>
+            <label class="block text-sm font-medium">Email</label>
+            <input name="email" type="email" required class="mt-1 w-full border rounded-lg px-3 py-2"/>
+          </div>
+          <div>
+            <label class="block text-sm font-medium">Telefono</label>
+            <input name="telefono" class="mt-1 w-full border rounded-lg px-3 py-2"/>
+          </div>
+        </div>
+        <div class="grid sm:grid-cols-2 gap-4">
+          <div>
+            <label class="block text-sm font-medium">Check‑in</label>
+            <input name="checkin" type="date" class="mt-1 w-full border rounded-lg px-3 py-2"/>
+          </div>
+          <div>
+            <label class="block text-sm font-medium">Check‑out</label>
+            <input name="checkout" type="date" class="mt-1 w-full border rounded-lg px-3 py-2"/>
+          </div>
+        </div>
+        <div>
+          <label class="block text-sm font-medium">Messaggio</label>
+          <textarea name="messaggio" rows="4" class="mt-1 w-full border rounded-lg px-3 py-2"></textarea>
+        </div>
+        <div class="flex items-center gap-2">
+          <button class="px-5 py-3 rounded-lg bg-sky-500 hover:bg-sky-600 text-white font-semibold">Prenota</button>
+          <a href="https://wa.me/393458449179?text=Ciao Pria Aurora, vorrei informazioni di prenotazione" class="px-5 py-3 rounded-lg bg-emerald-500 hover:bg-emerald-600 text-white font-semibold">WhatsApp</a>
+        </div>
+      </form>
+    </div>
+  </section>
 
-<footer>
-    <p>📧 <a href="mailto:priaaurora.bnb@gmail.com">priaaurora.bnb@gmail.com</a> | 📱 WhatsApp: +39 345 8449179</p>
+  <div class="section-rope" aria-hidden="true"></div>
+
+  <section id="map" class="bg-slate-100">
+    <div class="max-w-6xl mx-auto px-4 py-12 sm:py-16">
+      <h2 class="text-2xl font-semibold mb-4">Dove siamo</h2>
+      <p class="mb-3">Via Benedetto Zaccaria 2/1 – Genova Pegli (GE)</p>
+      <div class="rounded-xl overflow-hidden shadow">
+        <iframe src="https://www.google.com/maps?q=Via%20Benedetto%20Zaccaria%202%2F1%2C%20Genova%20Pegli&output=embed" class="w-full h-80 border-0" loading="lazy"></iframe>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="bg-slate-900 text-slate-200">
+  <div class="max-w-6xl mx-auto px-4 py-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+    <div class="flex items-center gap-3">
+      <img src="assets/logo.png" alt="Pria Aurora" class="w-8 h-8"/>
+      <span>© 2025 Pria Aurora – Genova Pegli</span>
+    </div>
+    <a href="mailto:priaaurora.bnb@gmail.com" class="hover:underline">priaaurora.bnb@gmail.com</a>
+  </div>
 </footer>
+<a href="https://wa.me/393458449179" class="fixed bottom-5 right-5 bg-emerald-500 hover:bg-emerald-600 text-white rounded-full shadow-lg px-4 py-3 font-semibold">WhatsApp</a>
 </body>
 </html>
