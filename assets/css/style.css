@@ -1,56 +1,174 @@
-:root {
-  --rope: url('../rope.svg');
+/* =========================================================
+   PRIA AURORA — CSS principale
+   - Hero con brand centrato e CTA
+   - Corde divisorie
+   - Bottoni e dock in basso (booking/airbnb/whatsapp)
+   - Social in basso a destra
+   - Galleria con hover
+   - Regole responsive e rifiniture
+   ========================================================= */
+
+/* ---------- Variabili globali ---------- */
+:root{
+  --rope: url('../rope.svg');        /* corda orizzontale */
+  --rope-height: 12px;               /* altezza corda (modificala a piacere) */
+  --brand-w-sm: 160px;               /* diametro logo mobile */
+  --brand-w-md: 200px;               /* tablet */
+  --brand-w-lg: 240px;               /* desktop */
+  --hero-top-shift: 38%;             /* dove “cade” lo stack centrale (più basso = più su) */
+  --hero-shadow: 0 2px 14px rgba(0,0,0,.35);
+  --btn-radius: 999px;               /* pills */
 }
 
-/* Corda */
-.section-rope {
-  background-image: var(--rope);
-  background-repeat: repeat-x;
-  background-size: cover;
-  height: 10px;
-}
-
-/* Ombra testo */
-.shadow-text {
-  text-shadow: 0 2px 14px rgba(0,0,0,.35);
-}
-
-/* Logo */
-.logo-img {
-  width: 9rem;
-  height: auto;
-}
-@media (min-width: 640px) {
-  .logo-img { width: 14rem; }
-}
-@media (min-width: 1024px) {
-  .logo-img { width: 18rem; }
-}
-
-/* Galleria */
-.gallery img {
-  transition: transform .25s ease, opacity .25s ease;
-}
-.gallery a:hover img {
-  transform: scale(1.02);
-  opacity: .95;
-}
-
-/* Hero grande e cinematografica */
-.hero {
-  background-image: url('assets/images/aurora_Pegli.jpg'); /* Sostituisci con il percorso corretto */
+/* ---------- Hero ---------- */
+.hero{
+  position: relative;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  height: 90vh; /* molto alta su mobile e desktop */
-  display: flex;
-  align-items: center; /* centra verticalmente eventuale testo */
-  justify-content: center;
 }
 
-/* Regolazione per schermi grandi */
-@media (min-width: 1024px) {
-  .hero {
-    height: 100vh; /* pieno schermo su desktop */
-  }
+/* overlay scuro per leggibilità */
+.hero::before{
+  content:"";
+  position:absolute; inset:0;
+  background: rgba(0,0,0,.35);
 }
+
+/* contenitore posizionato sopra l’overlay */
+.hero__stage{
+  position: relative;
+  min-height: 72vh;
+}
+
+/* blocco centrale (logo + titoli + CTA) */
+.hero__center{
+  position:absolute; left:50%;
+  top:var(--hero-top-shift);
+  transform: translate(-50%,-50%);
+  text-align:center;
+  color:#fff;
+  text-shadow: var(--hero-shadow);
+  display:flex; flex-direction:column; align-items:center; gap:14px;
+}
+
+/* Logo brand (cerchio con corda) */
+.hero__brand{
+  width: var(--brand-w-sm);
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 6px 18px rgba(0,0,0,.35));
+}
+@media (min-width:640px){ .hero__brand{ width: var(--brand-w-md); } }
+@media (min-width:1024px){ .hero__brand{ width: var(--brand-w-lg); } }
+
+/* Titolo + sottotitolo */
+.hero__title{
+  font-weight:800;
+  line-height:1.05;
+  font-size: clamp(28px, 4.2vw, 56px);
+  margin-top: 6px;
+}
+.hero__subtitle{
+  font-size: clamp(14px, 1.5vw, 18px);
+  opacity:.95;
+}
+
+/* righe di pulsanti centrali */
+.hero__cta{
+  display:flex; flex-wrap:wrap; gap:10px; justify-content:center;
+  margin-top: 10px;
+}
+
+/* link lingua in alto a destra */
+.hero__lang{
+  position:absolute; right: clamp(12px, 4vw, 36px); top: 14px;
+  z-index:10;
+}
+.hero__lang a{
+  color:#fff; text-decoration:underline;
+  text-shadow: var(--hero-shadow);
+}
+
+/* ---------- Dock in basso a sinistra (Gallery / Prenota / loghi portali / WhatsApp) ---------- */
+.hero__dockLeft{
+  position:absolute; left: clamp(12px, 4vw, 40px);
+  bottom: clamp(16px, 4vw, 40px);
+  display:flex; align-items:center; gap:10px; flex-wrap:wrap;
+  z-index:10;
+}
+
+/* pulsanti base */
+.btn{
+  display:inline-flex; align-items:center; gap:8px;
+  padding: 10px 16px;
+  border-radius: var(--btn-radius);
+  font-weight:600; font-size: 15px;
+  border:1px solid transparent;
+  transition:.2s ease;
+  box-shadow: 0 6px 16px rgba(0,0,0,.22);
+  backdrop-filter: saturate(120%) blur(2px);
+}
+
+/* varianti */
+.btn--primary{ background:#0ea5e9; color:#fff; }
+.btn--primary:hover{ background:#0284c7; }
+
+.btn--light{ background:rgba(255,255,255,.92); color:#0f172a; }
+.btn--light:hover{ background:#fff; }
+
+.btn--whatsapp{ background:#22c55e; color:#fff; }
+.btn--whatsapp:hover{ background:#16a34a; }
+
+/* pillole con sola icona (loghi portali) */
+.pill-icon{
+  width:42px; height:42px; border-radius:999px;
+  display:inline-grid; place-items:center;
+  background:rgba(255,255,255,.92);
+  border:1px solid rgba(15,23,42,.08);
+  box-shadow: 0 6px 16px rgba(0,0,0,.22);
+}
+.pill-icon img{ width:24px; height:24px; display:block; }
+
+/* ---------- Social in basso a destra ---------- */
+.hero__dockRight{
+  position:absolute; right: clamp(12px, 4vw, 40px);
+  bottom: clamp(16px, 4vw, 40px);
+  display:flex; flex-direction:column; gap:10px;
+  z-index:10;
+}
+.social{
+  width:42px; height:42px; border-radius:999px; display:grid; place-items:center;
+  background:rgba(255,255,255,.92);
+  border:1px solid rgba(15,23,42,.08);
+  box-shadow: 0 6px 16px rgba(0,0,0,.22);
+  transition: transform .15s ease, box-shadow .15s ease, background .2s ease;
+}
+.social:hover{ transform: translateY(-2px); background:#fff; }
+.social img{ width:22px; height:22px; }
+
+/* ---------- Corda divisoria ---------- */
+.section-rope{
+  background-image: var(--rope);
+  background-repeat: repeat-x;
+  background-size: contain;            /* mantiene la trama sottile e nitida */
+  height: var(--rope-height);
+}
+
+/* ---------- Logo nelle sezioni (fuori hero) ---------- */
+.logo-img{ width:9rem; height:auto; }
+@media(min-width:640px){ .logo-img{ width:14rem; } }
+@media(min-width:1024px){ .logo-img{ width:18rem; } }
+
+/* ---------- Ombra testo riutilizzabile ---------- */
+.shadow-text{ text-shadow: var(--hero-shadow); }
+
+/* ---------- Galleria ---------- */
+.gallery img{
+  transition: transform .25s ease, opacity .25s ease;
+  will-change: transform, opacity;
+}
+.gallery a:hover img{ transform: scale(1.02); opacity:.95; }
+
+/* ---------- Piccole rifiniture contenuto ---------- */
+section h2{ letter-spacing: .1px; }
