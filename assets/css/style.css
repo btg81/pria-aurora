@@ -98,18 +98,17 @@
   text-shadow: var(--text-shadow);
 }
 
-/* ---------- DOCK UNICO in basso a SINISTRA ---------- */
-/* Dock basso sinistra */
-.hero__dockLeft {
-  position: absolute;
-  left: 0; /* aderente al bordo sinistro */
-  bottom: 0; /* aderente al bordo inferiore */
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  flex-wrap: wrap;
-  padding: 12px 14px; /* piccolo margine interno */
-  z-index: 10;
+/* Loghi/icone in basso a SINISTRA, attaccati all'angolo */
+.hero__dockLeft{
+  position:absolute !important;
+  left:0 !important;
+  bottom:0 !important;
+  padding:12px 14px !important;   /* piccolo respiro dall’angolo */
+  display:flex !important;
+  align-items:center;
+  gap:10px;
+  flex-wrap:wrap;
+  z-index:100 !important;          /* sopra l’immagine di sfondo */
 }
 
 /* Se vuoi ordinare in due righe compatte su mobile */
