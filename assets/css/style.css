@@ -90,16 +90,18 @@
 .hero__lang a{ color:#fff; text-decoration:underline; text-shadow:var(--text-shadow); }
 
 /* ---------- DOCK UNICO in basso a SINISTRA ---------- */
-.hero__dockLeft{
+/* Dock basso sinistra */
+.hero__dockLeft {
   position: absolute;
-  left: clamp(var(--dock-inset-x), 4vw, 10px);
-  bottom: clamp(var(--dock-inset-y), 4vw, 10px);
-  top: auto !important;       /* annulla eventuali top */
-  right: auto;
-  display: flex; align-items: center; gap: var(--dock-gap); flex-wrap: wrap;
+  left: 0; /* aderente al bordo sinistro */
+  bottom: 0; /* aderente al bordo inferiore */
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  padding: 12px 14px; /* piccolo margine interno */
   z-index: 10;
 }
-
 
 /* Se vuoi ordinare in due righe compatte su mobile */
 .hero__dockLeft .row{
