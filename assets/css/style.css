@@ -128,7 +128,7 @@
 }
 
 /* ---------- Elementi generali ---------- */
-.logo-img{ width:9rem; height:auto; }
+.logo-img{ width:14rem; height:auto; }
 @media(min-width:640px){ .logo-img{ width:14rem; } }
 @media(min-width:1024px){ .logo-img{ width:18rem; } }
 
