@@ -1,6 +1,6 @@
 
 :root{--rope:url('../rope.svg');}
-.section-rope{background-image:var(--rope); background-repeat:repeat-x; background-size:cover; height:60px;}
+.section-rope{background-image:var(--rope); background-repeat:repeat-x; background-size:cover; height:10px;}
 .shadow-text{text-shadow:0 2px 14px rgba(0,0,0,.35)}
 .logo-img{width:9rem;height:auto}
 @media(min-width:640px){.logo-img{width:14rem}}
