@@ -89,12 +89,15 @@
 
 /* ---------- DOCK UNICO in basso a SINISTRA ---------- */
 .hero__dockLeft{
-  position:absolute;
-  left:clamp(var(--dock-inset-x), 4vw, 40px);
-  bottom:clamp(var(--dock-inset-y), 4vw, 40px);
-  display:flex; align-items:center; gap:var(--dock-gap); flex-wrap:wrap;
-  z-index:10;
+  position: absolute;
+  left: clamp(var(--dock-inset-x), 4vw, 40px);
+  bottom: clamp(var(--dock-inset-y), 4vw, 40px);
+  top: auto !important;       /* annulla eventuali top */
+  right: auto;
+  display: flex; align-items: center; gap: var(--dock-gap); flex-wrap: wrap;
+  z-index: 10;
 }
+
 
 /* Se vuoi ordinare in due righe compatte su mobile */
 .hero__dockLeft .row{
