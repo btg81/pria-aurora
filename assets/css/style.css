@@ -77,7 +77,13 @@
 @media(min-width:640px){ .hero__brand{ width:var(--brand-w-md); } }
 @media(min-width:1024px){ .hero__brand{ width:var(--brand-w-lg); } }
 
-.hero__title{ font-weight:800; line-height:1.06; font-size:clamp(28px,4.4vw,56px); margin-top:6px; }
+.hero__title{
+  white-space: nowrap; /* evita il ritorno a capo */
+  font-weight: 800; 
+  line-height: 1.06;
+  font-size: clamp(28px, 4.4vw, 56px);
+  margin-top: 6px;
+}
 .hero__subtitle{ font-size:clamp(14px,1.5vw,18px); opacity:.95; }
 .hero__cta{ display:flex; justify-content:center; gap:10px; margin-top:10px; }
 
