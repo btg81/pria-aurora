@@ -1,174 +1,152 @@
 /* =========================================================
-   PRIA AURORA — CSS principale
-   - Hero con brand centrato e CTA
-   - Corde divisorie
-   - Bottoni e dock in basso (booking/airbnb/whatsapp)
-   - Social in basso a destra
-   - Galleria con hover
-   - Regole responsive e rifiniture
+   PRIA AURORA — CSS v2.1 (hero cinema, layout richiesto)
    ========================================================= */
 
-/* ---------- Variabili globali ---------- */
+/* ---------- Variabili ---------- */
 :root{
-  --rope: url('../rope.svg');        /* corda orizzontale */
-  --rope-height: 12px;               /* altezza corda (modificala a piacere) */
-  --brand-w-sm: 160px;               /* diametro logo mobile */
-  --brand-w-md: 200px;               /* tablet */
-  --brand-w-lg: 240px;               /* desktop */
-  --hero-top-shift: 38%;             /* dove “cade” lo stack centrale (più basso = più su) */
-  --hero-shadow: 0 2px 14px rgba(0,0,0,.35);
-  --btn-radius: 999px;               /* pills */
+  --rope: url('../rope.svg');
+  --rope-height: 12px;
+
+  /* Hero full-bleed */
+  --hero-min-h-mobile: 90svh;
+  --hero-min-h-desktop: 94svh;
+  /* posizione dello stack centrale (più basso = più giù) */
+  --hero-top-shift: 38%;
+
+  /* Brand */
+  --brand-w-sm: 160px;
+  --brand-w-md: 200px;
+  --brand-w-lg: 240px;
+
+  --text-shadow: 0 2px 14px rgba(0,0,0,.35);
+  --btn-radius: 999px;
 }
 
-/* ---------- Hero ---------- */
+/* ---------- HERO full-bleed + cinema ---------- */
 .hero{
-  position: relative;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  position:relative;
+  background-size:cover;
+  background-position:center;
+  background-repeat:no-repeat;
+  min-height: var(--hero-min-h-mobile);
 }
+@media (min-width:768px){ .hero{ min-height: var(--hero-min-h-desktop); } }
 
-/* overlay scuro per leggibilità */
+/* overlay uniforme */
 .hero::before{
-  content:"";
-  position:absolute; inset:0;
-  background: rgba(0,0,0,.35);
+  content:""; position:absolute; inset:0;
+  background: rgba(0,0,0,.32);
+  pointer-events:none;
 }
 
-/* contenitore posizionato sopra l’overlay */
-.hero__stage{
-  position: relative;
-  min-height: 72vh;
+/* vignetta cinema top/bottom + leggero radial */
+.hero::after{
+  content:""; position:absolute; inset:0;
+  background:
+    radial-gradient(120% 140% at 50% 50%, rgba(0,0,0,0) 55%, rgba(0,0,0,.14) 78%, rgba(0,0,0,.26) 100%),
+    linear-gradient(to bottom, rgba(0,0,0,.48), rgba(0,0,0,0) 22%, rgba(0,0,0,0) 78%, rgba(0,0,0,.48));
+  pointer-events:none;
 }
 
-/* blocco centrale (logo + titoli + CTA) */
+.hero__stage{ position:relative; min-height:inherit; }
+
+/* ---------- Stack centrale ---------- */
 .hero__center{
   position:absolute; left:50%;
   top:var(--hero-top-shift);
-  transform: translate(-50%,-50%);
-  text-align:center;
-  color:#fff;
-  text-shadow: var(--hero-shadow);
-  display:flex; flex-direction:column; align-items:center; gap:14px;
+  transform:translate(-50%,-50%);
+  text-align:center; color:#fff;
+  text-shadow: var(--text-shadow);
+  display:flex; flex-direction:column; align-items:center; gap:12px;
 }
-
-/* Logo brand (cerchio con corda) */
 .hero__brand{
-  width: var(--brand-w-sm);
-  height: auto;
-  object-fit: contain;
+  width:var(--brand-w-sm); height:auto; object-fit:contain;
   filter: drop-shadow(0 6px 18px rgba(0,0,0,.35));
 }
-@media (min-width:640px){ .hero__brand{ width: var(--brand-w-md); } }
-@media (min-width:1024px){ .hero__brand{ width: var(--brand-w-lg); } }
+@media(min-width:640px){ .hero__brand{ width:var(--brand-w-md); } }
+@media(min-width:1024px){ .hero__brand{ width:var(--brand-w-lg); } }
 
-/* Titolo + sottotitolo */
 .hero__title{
-  font-weight:800;
-  line-height:1.05;
-  font-size: clamp(28px, 4.2vw, 56px);
-  margin-top: 6px;
+  font-weight:800; line-height:1.06;
+  font-size: clamp(28px, 4.4vw, 56px);
+  margin-top:6px;
 }
 .hero__subtitle{
   font-size: clamp(14px, 1.5vw, 18px);
   opacity:.95;
 }
 
-/* righe di pulsanti centrali */
+/* Solo il bottone Galleria sotto al titolo */
 .hero__cta{
-  display:flex; flex-wrap:wrap; gap:10px; justify-content:center;
-  margin-top: 10px;
+  display:flex; justify-content:center; gap:10px; margin-top:10px;
 }
 
-/* link lingua in alto a destra */
+/* ---------- Lingua (alto a destra) ---------- */
 .hero__lang{
-  position:absolute; right: clamp(12px, 4vw, 36px); top: 14px;
-  z-index:10;
+  position:absolute; right:clamp(12px,4vw,36px); top:14px; z-index:10;
 }
-.hero__lang a{
-  color:#fff; text-decoration:underline;
-  text-shadow: var(--hero-shadow);
-}
+.hero__lang a{ color:#fff; text-decoration:underline; text-shadow:var(--text-shadow); }
 
-/* ---------- Dock in basso a sinistra (Gallery / Prenota / loghi portali / WhatsApp) ---------- */
+/* ---------- Dock basso sinistra (Prenota, WA, Airbnb, Booking) ---------- */
 .hero__dockLeft{
-  position:absolute; left: clamp(12px, 4vw, 40px);
-  bottom: clamp(16px, 4vw, 40px);
-  display:flex; align-items:center; gap:10px; flex-wrap:wrap;
-  z-index:10;
+  position:absolute; left:clamp(12px,4vw,40px);
+  bottom:clamp(16px,4vw,40px);
+  display:flex; align-items:center; gap:10px; flex-wrap:wrap; z-index:10;
+  padding-bottom: calc(var(--rope-height) * .25);
 }
 
-/* pulsanti base */
+/* ---------- Social basso destra ORIZZONTALE ---------- */
+.hero__dockRight{
+  position:absolute; right:clamp(12px,4vw,40px);
+  bottom:clamp(16px,4vw,40px);
+  display:flex; flex-direction:row; gap:10px; z-index:10;
+  flex-wrap:wrap;                 /* su schermi stretti va a capo */
+}
+
+/* ---------- Bottoni / Pill ---------- */
 .btn{
   display:inline-flex; align-items:center; gap:8px;
-  padding: 10px 16px;
-  border-radius: var(--btn-radius);
-  font-weight:600; font-size: 15px;
-  border:1px solid transparent;
+  padding:10px 16px; border-radius:var(--btn-radius);
+  font-weight:600; font-size:15px; border:1px solid transparent;
   transition:.2s ease;
-  box-shadow: 0 6px 16px rgba(0,0,0,.22);
-  backdrop-filter: saturate(120%) blur(2px);
+  box-shadow:0 6px 16px rgba(0,0,0,.22);
+  backdrop-filter:saturate(120%) blur(2px);
 }
-
-/* varianti */
 .btn--primary{ background:#0ea5e9; color:#fff; }
 .btn--primary:hover{ background:#0284c7; }
-
 .btn--light{ background:rgba(255,255,255,.92); color:#0f172a; }
 .btn--light:hover{ background:#fff; }
-
 .btn--whatsapp{ background:#22c55e; color:#fff; }
 .btn--whatsapp:hover{ background:#16a34a; }
 
-/* pillole con sola icona (loghi portali) */
-.pill-icon{
-  width:42px; height:42px; border-radius:999px;
-  display:inline-grid; place-items:center;
-  background:rgba(255,255,255,.92);
-  border:1px solid rgba(15,23,42,.08);
-  box-shadow: 0 6px 16px rgba(0,0,0,.22);
-}
-.pill-icon img{ width:24px; height:24px; display:block; }
-
-/* ---------- Social in basso a destra ---------- */
-.hero__dockRight{
-  position:absolute; right: clamp(12px, 4vw, 40px);
-  bottom: clamp(16px, 4vw, 40px);
-  display:flex; flex-direction:column; gap:10px;
-  z-index:10;
-}
+/* Icone rotonde (Airbnb, Booking e Social) */
+.pill-icon,
 .social{
   width:42px; height:42px; border-radius:999px; display:grid; place-items:center;
   background:rgba(255,255,255,.92);
   border:1px solid rgba(15,23,42,.08);
-  box-shadow: 0 6px 16px rgba(0,0,0,.22);
+  box-shadow:0 6px 16px rgba(0,0,0,.22);
   transition: transform .15s ease, box-shadow .15s ease, background .2s ease;
 }
-.social:hover{ transform: translateY(-2px); background:#fff; }
-.social img{ width:22px; height:22px; }
+.pill-icon img, .social img{ width:22px; height:22px; display:block; }
+.pill-icon:hover, .social:hover{ transform:translateY(-2px); background:#fff; }
 
 /* ---------- Corda divisoria ---------- */
 .section-rope{
-  background-image: var(--rope);
-  background-repeat: repeat-x;
-  background-size: contain;            /* mantiene la trama sottile e nitida */
-  height: var(--rope-height);
+  background-image:var(--rope);
+  background-repeat:repeat-x;
+  background-size:contain;
+  height:var(--rope-height);
 }
 
-/* ---------- Logo nelle sezioni (fuori hero) ---------- */
+/* ---------- Elementi generali ---------- */
 .logo-img{ width:9rem; height:auto; }
 @media(min-width:640px){ .logo-img{ width:14rem; } }
 @media(min-width:1024px){ .logo-img{ width:18rem; } }
 
-/* ---------- Ombra testo riutilizzabile ---------- */
-.shadow-text{ text-shadow: var(--hero-shadow); }
+.shadow-text{ text-shadow: var(--text-shadow); }
 
-/* ---------- Galleria ---------- */
-.gallery img{
-  transition: transform .25s ease, opacity .25s ease;
-  will-change: transform, opacity;
-}
-.gallery a:hover img{ transform: scale(1.02); opacity:.95; }
+.gallery img{ transition: transform .25s ease, opacity .25s ease; will-change: transform, opacity; }
+.gallery a:hover img{ transform:scale(1.02); opacity:.95; }
 
-/* ---------- Piccole rifiniture contenuto ---------- */
-section h2{ letter-spacing: .1px; }
+section h2{ letter-spacing:.1px; }
