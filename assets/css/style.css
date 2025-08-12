@@ -30,7 +30,7 @@
   background-repeat:no-repeat;
   min-height: var(--hero-min-h-mobile);
 }
-@media (min-width:768px){ .hero{ min-height: var(--hero-min-h-desktop); } }
+@media (min-width:1028px){ .hero{ min-height: var(--hero-min-h-desktop); } }
 
 /* overlay uniforme */
 .hero::before{
