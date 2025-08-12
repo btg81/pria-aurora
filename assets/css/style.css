@@ -83,19 +83,16 @@
 .hero__subtitle{ font-size:clamp(14px,1.5vw,18px); opacity:.95; }
 .hero__cta{ display:flex; justify-content:center; gap:10px; margin-top:10px; }
 
-/* ---------- Lingua (alto a destra) ---------- *//* Lingua in alto a destra */
-.hero__lang {
-  position: absolute;
-  right: 0; /* aderente al bordo destro */
-  top: 0;   /* aderente al bordo superiore */
-  padding: 12px 14px; /* margine interno */
-  z-index: 10;
+/* Link lingua in alto a DESTRA, attaccato all’angolo */
+.hero__lang{
+  position:absolute !important;
+  right:0 !important;
+  top:0 !important;
+  padding:12px 14px !important;
+  z-index:110 !important;
 }
-
-.hero__lang a {
-  color: #fff;
-  text-decoration: underline;
-  text-shadow: var(--text-shadow);
+.hero__lang a{
+  color:#fff; text-decoration:underline; text-shadow:var(--text-shadow);
 }
 
 /* Loghi/icone in basso a SINISTRA, attaccati all'angolo */
