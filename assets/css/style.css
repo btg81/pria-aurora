@@ -216,3 +216,28 @@
 
 /* (opzionale) se qualcosa lo rende sticky/fixed o gli imposta top inline */
 .hero__dockLeft[style*="top"]{ top:auto !important; }
+/* ============================================
+   Comportamento social/WhatsApp solo su mobile
+   ============================================ */
+
+/* Nasconde il pulsante WhatsApp fisso su mobile finché non si scrolla */
+@media (max-width: 768px) {
+  .wa-fixed {
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+  }
+  .wa-fixed.visible {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  /* Mostra le icone social in basso all'inizio ma le nasconde dopo lo scroll */
+  .hero__dockLeft {
+    transition: opacity 0.3s ease;
+  }
+  .hero__dockLeft.hidden {
+    opacity: 0;
+    pointer-events: none;
+  }
+}
