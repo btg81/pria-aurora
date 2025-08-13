@@ -219,9 +219,8 @@
 /* ============================================
    Comportamento social/WhatsApp solo su mobile
    ============================================ */
-
-/* Nasconde il pulsante WhatsApp fisso su mobile finché non si scrolla */
 @media (max-width: 768px) {
+  /* Nasconde WA finché non scrolli */
   .wa-fixed {
     opacity: 0;
     pointer-events: none;
@@ -232,7 +231,7 @@
     pointer-events: auto;
   }
 
-  /* Mostra le icone social in basso all'inizio ma le nasconde dopo lo scroll */
+  /* Social inizialmente visibili, poi nascosti dopo scroll */
   .hero__dockLeft {
     transition: opacity 0.3s ease;
   }
