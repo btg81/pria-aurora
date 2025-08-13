@@ -212,5 +212,23 @@
   </div>
 </footer>
  <a href="https://wa.me/393458449179" class="fixed bottom-5 right-5 bg-emerald-500 hover:bg-emerald-600 text-white rounded-full shadow-lg px-4 py-3 font-semibold">WhatsApp</a>
+<script>
+document.addEventListener("DOMContentLoaded", function(){
+  const waBtn = document.querySelector(".wa-fixed");
+  const dockLeft = document.querySelector(".hero__dockLeft");
+
+  if (waBtn && dockLeft) {
+    window.addEventListener("scroll", function(){
+      if (window.scrollY > 150) {
+        waBtn.classList.add("visible");      // Mostra WA
+        dockLeft.classList.add("hidden");    // Nasconde social
+      } else {
+        waBtn.classList.remove("visible");   // Nasconde WA
+        dockLeft.classList.remove("hidden"); // Mostra social
+      }
+    });
+  }
+});
+</script>
 </body>
 </html>
