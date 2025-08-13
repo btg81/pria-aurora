@@ -86,7 +86,7 @@
 
 @media (min-width: 1024px) {
   .hero__subtitle {
-    margin-top: 6rem;     /* sposta più in basso */
+    margin-top: 4rem;     /* sposta più in basso */
     font-size: 1.75rem;    /* ingrandisce il testo */
     line-height: 1.4;     /* più respiro tra le righe */
   }
