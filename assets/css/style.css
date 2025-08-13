@@ -14,7 +14,7 @@
   /* Hero */
   --hero-min-h-mobile: 100svh;
   --hero-min-h-desktop: 100svh;
-  --hero-top-shift: 40%;     /* più piccolo = più in alto lo stack */
+  --hero-top-shift: 35%;     /* più piccolo = più in alto lo stack */
 
   /* Logo */
   --brand-w-sm: 210px;
@@ -73,7 +73,7 @@
 .hero__brand{
   width:var(--brand-w-sm); height:auto; object-fit:contain;
   filter: drop-shadow(0 6px 18px rgba(0,0,0,.35));
-   margin-bottom: 6px;
+   margin-bottom: 7px;
 }
 @media(min-width:640px){ .hero__brand{ width:var(--brand-w-md); } }
 @media(min-width:1024px){ .hero__brand{ width:var(--brand-w-lg); } }
