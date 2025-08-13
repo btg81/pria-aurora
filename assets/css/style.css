@@ -240,3 +240,18 @@
     pointer-events: none;
   }
 }
+/* --- altri stili del sito --- */
+
+/* --- Gallery slider --- */
+.gallery .swiper {
+  --tw-border-opacity: 1;
+  border: 1px solid rgba(226,232,240,var(--tw-border-opacity));
+}
+.gallery__thumbs .swiper-slide {
+  opacity: .6;
+  cursor: pointer;
+}
+.gallery__thumbs .swiper-slide-thumb-active {
+  opacity: 1;
+}
+
