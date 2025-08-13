@@ -213,6 +213,10 @@
   .pill-icon, .social{ width:36px; height:36px; box-shadow:0 4px 12px rgba(0,0,0,.2); }
   .pill-icon img, .social img{ width:20px; height:20px; }
 }
-
+@media (max-width: 768px) {
+  .whatsapp-float {
+    display: none !important;
+  }
+}
 /* (opzionale) se qualcosa lo rende sticky/fixed o gli imposta top inline */
 .hero__dockLeft[style*="top"]{ top:auto !important; }
