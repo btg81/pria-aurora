@@ -14,7 +14,7 @@
   /* Hero */
   --hero-min-h-mobile: 100svh;
   --hero-min-h-desktop: 100svh;
-  --hero-top-shift: 32%;     /* più piccolo = più in alto lo stack */
+  --hero-top-shift: 42%;     /* più piccolo = più in alto lo stack */
 
   /* Logo */
   --brand-w-sm: 210px;
