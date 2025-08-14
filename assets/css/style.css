@@ -355,7 +355,7 @@
 /* Scala su schermi grandi (facoltativo) */
 @media (min-width: 1024px){
   :root{
-    --rope-h: 40px;
+    --rope-h: 30px;
     --knot-w: 188px;
   }
 }
