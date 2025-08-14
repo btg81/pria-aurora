@@ -286,27 +286,29 @@
   background-size: auto var(--rope-h); /* scala l’altezza, ripete in larghezza */
   image-rendering: -webkit-optimize-contrast;
 }
-
-/* ====== Rope divider: due mezze cime + nodo al centro ====== */
 :root{
-  /* usa gli stessi file che hai messo in /Galleria */
-  --rope-url: url('/Galleria/cima.png');     /* la cima dritta */
-  --knot-url: url('/Galleria/savoia.png');   /* il nodo */
+  --rope-url: url('/Galleria/cima.png');
+  --knot-url: url('/Galleria/savoia.png');
 
-  /* dimensioni: regola qui per far combaciare spessore/scala */
-  --rope-h: 18px;    /* spessore visivo della cima */
-  --knot-w: 168px;   /* larghezza del nodo */
+  --rope-h: 36px;   /* come stai usando ora */
+  --knot-w: 220px;  /* regola finché il nodo “abbraccia” bene le cime */
+
+  /* NUOVO: micro‑allineamenti delle due texture */
+  --left-phase: 6px;   /* prova 6px, poi +/- 1px finché sparisce lo “scalino” */
+  --right-phase: -4px; /* puoi usare valori negativi */
+  /* NUOVO: lunghezza dissolvenza ai bordi interni (vicino al nodo) */
+  --blend: 12px;       /* 10–14px funziona bene con rope-h ~ 36px */
 }
 
 .rope-divider{
   position: relative;
   width: 100%;
-  height: max(var(--rope-h), calc(var(--knot-w) * 0.60));
+  height: max(var(--rope-h), calc(var(--knot-w) * .6));
   margin: 22px 0;
   pointer-events: none;
 }
 
-/* Mezze cime (sinistra e destra) */
+/* mezze cime */
 .rope-divider .rope{
   position: absolute;
   top: 50%;
@@ -314,48 +316,41 @@
   transform: translateY(-50%);
   background-image: var(--rope-url);
   background-repeat: repeat-x;
-  background-size: auto var(--rope-h); /* scala solo l’altezza */
+  background-size: auto var(--rope-h);
   image-rendering: -webkit-optimize-contrast;
 }
 
-/* Sinistra: dall’inizio a metà meno metà nodo */
+/* sinistra: fino a metà meno mezzo nodo */
 .rope-divider .rope--left{
   left: 0;
   width: calc(50% - var(--knot-w) / 2);
-  background-position: right center; /* allinea i “passi” vicino al nodo */
+  /* allineamento fase: sposto la texture verso destra */
+  background-position: calc(100% + var(--left-phase)) 50%;
+  /* dissolvenza sul bordo destro (verso il nodo) */
+  -webkit-mask-image: linear-gradient(to right, #000 0 calc(100% - var(--blend)), transparent 100%);
+          mask-image: linear-gradient(to right, #000 0 calc(100% - var(--blend)), transparent 100%);
 }
 
-/* Destra: da metà più metà nodo fino alla fine */
+/* destra: da metà più mezzo nodo alla fine */
 .rope-divider .rope--right{
   right: 0;
   width: calc(50% - var(--knot-w) / 2);
-  background-position: left center;
+  /* allineamento fase: sposto la texture verso sinistra */
+  background-position: var(--right-phase) 50%;
+  /* dissolvenza sul bordo sinistro (verso il nodo) */
+  -webkit-mask-image: linear-gradient(to right, transparent 0 var(--blend), #000 var(--blend) 100%);
+          mask-image: linear-gradient(to right, transparent 0 var(--blend), #000 var(--blend) 100%);
 }
 
-/* Nodo Savoia al centro, sopra le cime */
+/* nodo al centro sopra tutto */
 .rope-divider .knot{
   position: absolute;
   left: 50%;
   top: 50%;
   width: var(--knot-w);
   transform: translate(-50%, -50%);
-  aspect-ratio: 2.2 / 1;         /* regola se il tuo PNG è più largo/stretto */
-  background-image: var(--knot-url);
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: center;
+  aspect-ratio: 2.2 / 1;     /* ok per il tuo PNG; regola se serve */
+  background: var(--knot-url) center / contain no-repeat;
   z-index: 2;
-}
-
-/* Leggero drop shadow (opzionale) per tridimensionalità */
-.rope-divider .knot{
-  filter: drop-shadow(0 2px 4px rgba(0,0,0,.12));
-}
-
-/* Scala su schermi grandi (facoltativo) */
-@media (min-width: 1024px){
-  :root{
-    --rope-h: 36px;
-    --knot-w: 188px;
-  }
+  filter: drop-shadow(0 2px 6px rgba(0,0,0,.14)); /* leggero 3D */
 }
