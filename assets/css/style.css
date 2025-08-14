@@ -287,31 +287,75 @@
   image-rendering: -webkit-optimize-contrast;
 }
 
-/* nodo Savoia centrato */
-.rope-divider::after{
-  content:"";
+/* ====== Rope divider: due mezze cime + nodo al centro ====== */
+:root{
+  /* usa gli stessi file che hai messo in /Galleria */
+  --rope-url: url('/Galleria/cima.png');     /* la cima dritta */
+  --knot-url: url('/Galleria/savoia.png');   /* il nodo */
+
+  /* dimensioni: regola qui per far combaciare spessore/scala */
+  --rope-h: 18px;    /* spessore visivo della cima */
+  --knot-w: 168px;   /* larghezza del nodo */
+}
+
+.rope-divider{
+  position: relative;
+  width: 100%;
+  height: max(var(--rope-h), calc(var(--knot-w) * 0.60));
+  margin: 22px 0;
+  pointer-events: none;
+}
+
+/* Mezze cime (sinistra e destra) */
+.rope-divider .rope{
   position: absolute;
-  left: 50%; top: 50%;
-  transform: translate(-50%,-50%);
+  top: 50%;
+  height: var(--rope-h);
+  transform: translateY(-50%);
+  background-image: var(--rope-url);
+  background-repeat: repeat-x;
+  background-size: auto var(--rope-h); /* scala solo l’altezza */
+  image-rendering: -webkit-optimize-contrast;
+}
+
+/* Sinistra: dall’inizio a metà meno metà nodo */
+.rope-divider .rope--left{
+  left: 0;
+  width: calc(50% - var(--knot-w) / 2);
+  background-position: right center; /* allinea i “passi” vicino al nodo */
+}
+
+/* Destra: da metà più metà nodo fino alla fine */
+.rope-divider .rope--right{
+  right: 0;
+  width: calc(50% - var(--knot-w) / 2);
+  background-position: left center;
+}
+
+/* Nodo Savoia al centro, sopra le cime */
+.rope-divider .knot{
+  position: absolute;
+  left: 50%;
+  top: 50%;
   width: var(--knot-w);
-  aspect-ratio: 2.2 / 1;       /* proporzione tipica del nodo; modifica se serve */
+  transform: translate(-50%, -50%);
+  aspect-ratio: 2.2 / 1;         /* regola se il tuo PNG è più largo/stretto */
   background-image: var(--knot-url);
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
+  z-index: 2;
 }
 
-/* scala un po’ su schermi grandi */
-@media (min-width: 768px){
-  :root{
-    --rope-h: 14px;
-    --knot-w: 148px;
-  }
-}
-@media (min-width: 1280px){
-  :root{
-    --rope-h: 16px;
-    --knot-w: 168px;
-  }
+/* Leggero drop shadow (opzionale) per tridimensionalità */
+.rope-divider .knot{
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,.12));
 }
 
+/* Scala su schermi grandi (facoltativo) */
+@media (min-width: 1024px){
+  :root{
+    --rope-h: 20px;
+    --knot-w: 188px;
+  }
+}
