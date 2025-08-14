@@ -155,14 +155,6 @@
   .pill-icon, .social{ width:var(--icon-size-desktop); height:var(--icon-size-desktop); }
 }
 
-/* ---------- Corda divisoria ---------- */
-.section-rope{
-  background-image:var(--rope);
-  background-repeat:repeat-x;
-  background-size:contain;
-  height:var(--rope-height);
-}
-
 /* ---------- Vari ---------- */
 .shadow-text{ text-shadow: var(--text-shadow); }
 .gallery img{ transition: transform .25s ease, opacity .25s ease; will-change: transform, opacity; }
@@ -253,5 +245,73 @@
 }
 .gallery__thumbs .swiper-slide-thumb-active {
   opacity: 1;
+}
+/* ====== Rope divider (cima + nodo Savoia centrato) ====== */
+:root{
+  /* percorsi ai file */
+  --rope-url: url('/Galleria/cima.png');
+  --knot-url: url('/Galleria/savoia.png');
+
+  /* dimensioni base */
+  --rope-h: 12px;   /* spessore cima */
+  --knot-w: 132px;  /* larghezza nodo */
+}
+
+/* variante più sottile, se la vuoi usare: <div class="rope-divider rope-divider--slim"></div> */
+.rope-divider--slim{
+  --rope-h: 10px;
+  --knot-w: 110px;
+}
+
+.rope-divider{
+  position: relative;
+  width: 100%;
+  /* altezza “slot” sufficiente a contenere il nodo */
+  height: max(var(--rope-h), calc(var(--knot-w) * 0.55));
+  margin: 20px 0;              /* spazio sopra/sotto la corda */
+  pointer-events: none;        /* puro decoro */
+}
+
+/* linea di cima ripetuta orizzontalmente */
+.rope-divider::before{
+  content:"";
+  position: absolute;
+  left: 0; right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  height: var(--rope-h);
+  background-image: var(--rope-url);
+  background-repeat: repeat-x;
+  background-position: center;
+  background-size: auto var(--rope-h); /* scala l’altezza, ripete in larghezza */
+  image-rendering: -webkit-optimize-contrast;
+}
+
+/* nodo Savoia centrato */
+.rope-divider::after{
+  content:"";
+  position: absolute;
+  left: 50%; top: 50%;
+  transform: translate(-50%,-50%);
+  width: var(--knot-w);
+  aspect-ratio: 2.2 / 1;       /* proporzione tipica del nodo; modifica se serve */
+  background-image: var(--knot-url);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
+/* scala un po’ su schermi grandi */
+@media (min-width: 768px){
+  :root{
+    --rope-h: 14px;
+    --knot-w: 148px;
+  }
+}
+@media (min-width: 1280px){
+  :root{
+    --rope-h: 16px;
+    --knot-w: 168px;
+  }
 }
 
