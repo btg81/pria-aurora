@@ -1,100 +1,356 @@
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <title>Pria Aurora – Dream & Breakfast by the Sea | Pegli Genoa</title>
-  <meta name="description" content="B&B by the sea in Pegli (Western Genoa). Sea view, comfort and small attentions. Book directly at the best price."/>
-  <meta name="keywords" content="Pegli, Genoa, B&B, bed and breakfast, seaside house, hotel, Western Genoa, sea, cliffs, sea view"/>
-  <link rel="icon" href="assets/logo_B.png" type="image/png"/>
-  <link rel="alternate" hreflang="it" href="/"/>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="assets/css/style.css"/>
-  <style>.hero{background-image:url('assets/images/Aurora_Pegli.jpg');}</style>
-</head>
-<body class="bg-slate-50 text-slate-800">
-<header class="hero" style="background-image:url('assets/images/aurora_Pegli.jpg')">
-  <div class="hero__stage max-w-6xl mx-auto px-4">
-    <!-- Language switch -->
-    <div class="hero__lang"><a href="/">Italiano</a></div>
+/* =========================================================
+   PRIA AURORA — CSS v2.4
+   - Hero full-bleed 100svh + effetto cinema
+   - Logo più grande
+   - Dock UNICO in basso a SINISTRA (prenota + booking/airbnb + social)
+   - WhatsApp flottante fisso in basso a destra (non toccato)
+   ========================================================= */
 
-    <!-- Center: logo + title + CTA -->
-    <div class="hero__center">
-      <img src="assets/logo.png" alt="Pria Aurora" class="hero__brand">
-      <h1 class="hero__title">Dream &amp; Breakfast by the Sea</h1>
-      <p class="hero__subtitle">Welcome to PriaAurora.com — Pegli, Genoa.</p>
+/* ---------- Variabili ---------- */
+:root{
+  --rope: url('../rope.svg');
+  --rope-height: 12px;
 
-      <div class="hero__cta">
-        <a href="#gallery" class="btn btn--light">Gallery</a>
-        <a href="#booking" class="btn btn--primary">Book</a>
-      </div>
-    </div>
-  </div>
-</header>
+  /* Hero */
+  --hero-min-h-mobile: 100svh;
+  --hero-min-h-desktop: 100svh;
+  --hero-top-shift: 37%;     /* più piccolo = più in alto lo stack */
 
-<section id="about" class="max-w-6xl mx-auto px-4 py-12 sm:py-16">
-  <div class="grid md:grid-cols-2 gap-8 items-start">
-    <!-- Text column -->
-    <div>
-      <h2 class="text-2xl font-semibold mb-1">Welcome on board</h2>
-      <p class="leading-relaxed whitespace-pre-line">
-        Our Dream &amp; Breakfast overlooks the sea, nestled among the cliffs of Pegli.  
-        A strategic and unique location: next to the bus stop, close to the train station and the pier from which the ferry takes you directly to the Old Port of Genoa.  
-        Yet, once you cross the threshold, the world seems to stop, silence begins and your land-cruise sets sail.  
-        In a cozy setting, below street level, with the cliffs at your back and the infinite blue in front, the only sound that reaches the window is that of the waves caressing the shore.  
-        A retreat suspended between comfort and poetry, where the sea sets the rhythm of the days.
-      </p>
+  /* Logo */
+  --brand-w-sm: 210px;
+  --brand-w-md: 260px;
+  --brand-w-lg: 320px;
 
-      <ul class="mt-4 space-y-2 list-disc pl-6">
-        <li><strong>The Captain’s Suite</strong> Inspired by luxury ship cabins.  
-An elegant and comfortable environment that recalls the charm of seafaring style.  
-The suite is equipped with air conditioning, a flat-screen TV and a charming sea view.  
-It features a comfortable double bed, a functional writing desk and a nautical-style wardrobe, combining practicality and design.  
-The carefully curated decor creates a refined and welcoming atmosphere, ideal for an unforgettable stay with all the comforts at hand.</li>
+  /* Bottoni / icone */
+  --btn-radius: 999px;
+  --text-shadow: 0 2px 14px rgba(0,0,0,.35);
 
-        <li><strong>The Commodore’s Cabin</strong> A versatile space that transforms as needed: during the day it serves as a <em>second lounge</em>, perfect for relaxation or reading, while at night it becomes a <strong>second double bedroom</strong>, intimate and comfortable.  
-Equipped with a practical <strong>sofa bed with frame</strong> and a <strong>Smart TV</strong>, the cabin is designed to provide comfort and functionality.  
-A handy <strong>open wardrobe</strong> and spacious <strong>storage units</strong> complete the room, making it ideal as an additional bedroom with two extra beds.  
-A cozy retreat, perfect both as an extension of the living area and to host family or friends.</li>
+  /* Dimensioni icone tonde (Airbnb/Booking/Social) */
+  --icon-size-mobile: 30px;
+  --icon-size-tablet: 34px;
+  --icon-size-desktop: 38px;
 
-        <li><strong>The Pier – Sea View Lounge</strong> A spacious living area combining modern comfort and maritime charm.  
-Furnished with a <strong>6-seater sofa</strong>, an <strong>extendable dining table</strong>, a <strong>65” Smart TV</strong> with Disney+, Netflix and Prime Video, and a <strong>home theatre system</strong>, it is the ideal space for convivial moments.  
-A large panoramic opening offers a <strong>breathtaking sea view</strong>, where the blue merges with the natural light flooding the space.</li>
+  /* Spazi dock */
+  --dock-gap: 10px;
+  --dock-inset-x: 12px;      /* quanto dista dal bordo sinistro su mobile */
+  --dock-inset-y: 16px;      /* quanto dista dal bordo basso su mobile */
+}
+@media (min-width:640px){
+  :root{ --dock-inset-x: 22px; --dock-inset-y: 24px; }
+}
+@media (min-width:1024px){
+  :root{ --dock-inset-x: 34px; --dock-inset-y: 34px; }
+}
 
-        <li><strong>The Galley – Modern Kitchen</strong> A functional, contemporary design, fully equipped with induction hob, dishwasher, oven, microwave and Nespresso Vertuo machine.  
-A practical <strong>breakfast island</strong> makes it perfect both for intimate breakfasts and convivial dinners.  
-Two <strong>corner windows</strong> flood the space with natural light and open directly onto the sea, offering a <strong>unique view of the cliffs and the infinite blue</strong>.  
-An environment that blends practicality and poetry, where every detail is designed to make your experience memorable.</li>
+/* ---------- HERO + cinema ---------- */
+.hero{
+  position:relative;
+  background-size:cover; background-position:center; background-repeat:no-repeat;
+  min-height: var(--hero-min-h-mobile);
+}
+@media (min-width:1024px){ .hero{ min-height: var(--hero-min-h-desktop); } }
 
-        <li><strong>The Bathroom – The Toilette</strong> A modern, functional space with <strong>double sink</strong>, <strong>large mirrors with dedicated lighting</strong>, <strong>rain shower</strong> with <strong>large showerhead</strong> and <strong>hand shower</strong>, <strong>wall-mounted sanitary ware</strong>, <strong>heated towel rack</strong> and <strong>hairdryer</strong>.  
-Featuring glossy red cabinets with <strong>ample storage space</strong>, this refined and welcoming bathroom is designed for maximum comfort.</li>
-      </ul>
+.hero::before{
+  content:""; position:absolute; inset:0;
+  background: rgba(0,0,0,.30); pointer-events:none;
+}
+.hero::after{
+  content:""; position:absolute; inset:0;
+  background:
+    radial-gradient(120% 140% at 50% 50%, rgba(0,0,0,0) 55%, rgba(0,0,0,.14) 78%, rgba(0,0,0,.25) 100%),
+    linear-gradient(to bottom, rgba(0,0,0,.48), rgba(0,0,0,0) 22%, rgba(0,0,0,0) 78%, rgba(0,0,0,.46));
+  pointer-events:none;
+}
+.hero__stage{ position:relative; min-height:inherit; }
 
-      <p class="mt-4"><strong>Pets are welcome, upon prior notice.</strong></p>
+/* ---------- Stack centrale ---------- */
+.hero__center{
+  position:absolute; left:50%; top:var(--hero-top-shift);
+  transform:translate(-50%,-50%);
+  text-align:center; color:#fff; text-shadow:var(--text-shadow);
+  display:flex; flex-direction:column; align-items:center; gap:12px;
+}
+.hero__brand{
+  width:var(--brand-w-sm); height:auto; object-fit:contain;
+  filter: drop-shadow(0 6px 18px rgba(0,0,0,.35));
+   margin-bottom: 7px;
+}
+@media(min-width:640px){ .hero__brand{ width:var(--brand-w-md); } }
+@media(min-width:1024px){ .hero__brand{ width:var(--brand-w-lg); } }
 
-      <h3 class="mt-6 text-xl font-semibold">Included Comforts</h3>
-      <ul class="list-disc pl-6 mt-2 space-y-1">
-        <li>Air conditioning in all rooms</li>
-        <li>Smart TV in every room: 65” in the living room, 32" in the bedrooms</li>
-        <li>High-speed Wi-Fi</li>
-        <li>Fully equipped kitchen: induction, hood, oven, microwave, Nespresso</li>
-        <li>Modern washing machine and dishwasher</li>
-        <li>Clothesline by the sea (in traditional Genoese style)</li>
-        <li>Extendable dining table and breakfast island</li>
-        <li>South-facing, with sea view from all rooms and large double-glazed windows</li>
-        <li>Bathroom with double sinks, wall-mounted sanitary ware and rain shower</li>
-        <li>Heated towel rack and hairdryer</li>
-        <li>Pet-friendly on request</li>
-      </ul>
-    </div>
+.hero__title{ font-weight:800; line-height:1.06; font-size:clamp(28px,4.4vw,56px); margin-top:6px; margin-bottom: 4px; }
 
-    <!-- Image column -->
-    <div class="grid grid-cols-1 gap-5">
-      <figure class="rounded-xl overflow-hidden shadow"><img src="Galleria/Suite.png" alt="The Captain’s Suite" class="w-full h-full object-cover aspect-[3/2]"/></figure>
-      <figure class="rounded-xl overflow-hidden shadow"><img src="Galleria/Cabina.png" alt="The Commodore’s Cabin" class="w-full h-full object-cover aspect-[3/2]"/></figure>
-      <figure class="rounded-xl overflow-hidden shadow"><img src="Galleria/Pontile.png" alt="The Pier – Lounge" class="w-full h-full object-cover aspect-[3/2]"/></figure>
-      <figure class="rounded-xl overflow-hidden shadow"><img src="Galleria/Cucina.png" alt="The Galley – Kitchen" class="w-full h-full object-cover aspect-[3/2]"/></figure>
-      <figure class="rounded-xl overflow-hidden shadow"><img src="Galleria/Bagno.png" alt="The Bathroom" class="w-full h-full object-cover aspect-[3/2]"/></figure>
-    </div>
-  </div>
-</section>
+.hero__subtitle {
+  margin-top: 0.75rem; /* spaziatura mobile */
+}
+
+@media (min-width: 1024px) {
+  .hero__subtitle {
+    margin-top: 3rem;     /* sposta più in basso */
+    font-size: 1.75rem;    /* ingrandisce il testo */
+    line-height: 1.4;     /* più respiro tra le righe */
+  }
+}.hero__cta{ display:flex; justify-content:center; gap:10px; margin-top:10px; }
+
+/* Link lingua in alto a DESTRA, attaccato all’angolo */
+.hero__lang{
+  position:absolute !important;
+  right:0 !important;
+  top:0 !important;
+  padding:12px 14px !important;
+  z-index:110 !important;
+}
+.hero__lang a{
+  color:#fff; text-decoration:underline; text-shadow:var(--text-shadow);
+}
+
+/* === Forza i loghi in basso a SINISTRA sullo schermo === */
+.hero__dockLeft{
+  position: fixed !important;  /* rispetto alla finestra, non solo all'hero */
+  left: 0 !important;
+  bottom: 0 !important;
+  padding: 12px 14px !important;
+  display: flex !important;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  z-index: 100 !important;
+}
+
+/* Se vuoi ordinare in due righe compatte su mobile */
+.hero__dockLeft .row{
+  display:flex; align-items:center; gap:var(--dock-gap);
+}
+
+/* ---------- Bottoni / Pill ---------- */
+.btn{
+  display:inline-flex; align-items:center; gap:8px;
+  padding:10px 16px; border-radius:var(--btn-radius);
+  font-weight:600; font-size:15px; border:1px solid transparent;
+  transition:.2s ease;
+  box-shadow:0 6px 16px rgba(0,0,0,.22);
+  backdrop-filter:saturate(120%) blur(2px);
+}
+.btn--primary{ background:#0ea5e9; color:#fff; }
+.btn--primary:hover{ background:#0284c7; }
+.btn--light{ background:rgba(255,255,255,.92); color:#0f172a; }
+.btn--light:hover{ background:#fff; }
+
+/* Icone rotonde (Airbnb, Booking e Social) */
+.pill-icon, .social{
+  width:var(--icon-size-mobile); height:var(--icon-size-mobile);
+  border-radius:999px; display:grid; place-items:center;
+  background:rgba(255,255,255,.92);
+  border:1px solid rgba(15,23,42,.08);
+  box-shadow:0 6px 16px rgba(0,0,0,.22);
+  transition: transform .15s ease, background .2s ease;
+}
+.pill-icon img, .social img{ width:60%; height:auto; display:block; }
+.pill-icon:hover, .social:hover{ transform:translateY(-2px); background:#fff; }
+
+@media(min-width:640px){
+  .pill-icon, .social{ width:var(--icon-size-tablet); height:var(--icon-size-tablet); }
+}
+@media(min-width:1024px){
+  .pill-icon, .social{ width:var(--icon-size-desktop); height:var(--icon-size-desktop); }
+}
+
+/* ---------- Vari ---------- */
+.shadow-text{ text-shadow: var(--text-shadow); }
+.gallery img{ transition: transform .25s ease, opacity .25s ease; will-change: transform, opacity; }
+.gallery a:hover img{ transform:scale(1.02); opacity:.95; }
+
+/* NON nascondere il WA flottante globale. Se hai questa regola, eliminala:
+   a.fixed.bottom-5.right-5{ display:none !important; } */
+/* l'hero fa da riferimento per gli assoluti */
+.hero{ position: relative; }
+
+/* contenitore interno dell'hero (se lo usi) eredita l'altezza */
+.hero__stage{ position: relative; min-height: inherit; }
+
+/* ----- Dock basso sinistra: loghi + social + whatsapp ----- */
+.hero__dockLeft{
+  position: absolute;
+  left: clamp(12px, 4vw, 40px);
+  bottom: clamp(16px, 4vw, 40px);
+  /* annulla qualunque "top" o "right" che possa arrivare da altrove */
+  top: auto !important;
+  right: auto !important;
+
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  z-index: 10;
+  /* un filo di spazio extra sopra la corda */
+  padding-bottom: 8px;
+}
+
+/* pill e social (dimensioni comode su desktop) */
+.pill-icon,
+.social{
+  width: 42px; height: 42px;
+  border-radius: 999px;
+  display: grid; place-items: center;
+  background: rgba(255,255,255,.92);
+  border: 1px solid rgba(15,23,42,.08);
+  box-shadow: 0 6px 16px rgba(0,0,0,.22);
+  transition: transform .15s ease, background .2s ease;
+}
+.pill-icon img, .social img{ width:22px; height:22px; display:block; }
+.pill-icon:hover, .social:hover{ transform: translateY(-2px); background:#fff; }
+
+/* misure più contenute su mobile, per evitare “icone giganti” */
+@media (max-width: 640px){
+  .pill-icon, .social{ width:36px; height:36px; box-shadow:0 4px 12px rgba(0,0,0,.2); }
+  .pill-icon img, .social img{ width:20px; height:20px; }
+}
+
+/* (opzionale) se qualcosa lo rende sticky/fixed o gli imposta top inline */
+.hero__dockLeft[style*="top"]{ top:auto !important; }
+/* ============================================
+   Comportamento social/WhatsApp solo su mobile
+   ============================================ */
+@media (max-width: 768px) {
+  /* Nasconde WA finché non scrolli */
+  .wa-fixed {
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+  }
+  .wa-fixed.visible {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  /* Social inizialmente visibili, poi nascosti dopo scroll */
+  .hero__dockLeft {
+    transition: opacity 0.3s ease;
+  }
+  .hero__dockLeft.hidden {
+    opacity: 0;
+    pointer-events: none;
+  }
+}
+/* --- altri stili del sito --- */
+
+/* --- Gallery slider --- */
+.gallery .swiper {
+  --tw-border-opacity: 1;
+  border: 1px solid rgba(226,232,240,var(--tw-border-opacity));
+}
+.gallery__thumbs .swiper-slide {
+  opacity: .6;
+  cursor: pointer;
+}
+.gallery__thumbs .swiper-slide-thumb-active {
+  opacity: 1;
+}
+/* ====== Rope divider (cima + nodo Savoia centrato) ====== */
+:root{
+  /* percorsi ai file */
+  --rope-url: url('/Galleria/cima.png');
+  --knot-url: url('/Galleria/savoia.png');
+
+  /* dimensioni base */
+  --rope-h: 12px;   /* spessore cima */
+  --knot-w: 132px;  /* larghezza nodo */
+}
+
+/* variante più sottile, se la vuoi usare: <div class="rope-divider rope-divider--slim"></div> */
+.rope-divider--slim{
+  --rope-h: 10px;
+  --knot-w: 110px;
+}
+
+.rope-divider{
+  position: relative;
+  width: 100%;
+  /* altezza “slot” sufficiente a contenere il nodo */
+  height: max(var(--rope-h), calc(var(--knot-w) * 0.55));
+  margin: 20px 0;              /* spazio sopra/sotto la corda */
+  pointer-events: none;        /* puro decoro */
+}
+
+/* linea di cima ripetuta orizzontalmente */
+.rope-divider::before{
+  content:"";
+  position: absolute;
+  left: 0; right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  height: var(--rope-h);
+  background-image: var(--rope-url);
+  background-repeat: repeat-x;
+  background-position: center;
+  background-size: auto var(--rope-h); /* scala l’altezza, ripete in larghezza */
+  image-rendering: -webkit-optimize-contrast;
+}
+:root{
+  --rope-url: url('/Galleria/cima.png');
+  --knot-url: url('/Galleria/savoia.png');
+
+  --rope-h: 36px;   /* come stai usando ora */
+  --knot-w: 220px;  /* regola finché il nodo “abbraccia” bene le cime */
+
+  /* NUOVO: micro‑allineamenti delle due texture */
+  --left-phase: 6px;   /* prova 6px, poi +/- 1px finché sparisce lo “scalino” */
+  --right-phase: -4px; /* puoi usare valori negativi */
+  /* NUOVO: lunghezza dissolvenza ai bordi interni (vicino al nodo) */
+  --blend: 12px;       /* 10–14px funziona bene con rope-h ~ 36px */
+}
+
+.rope-divider{
+  position: relative;
+  width: 100%;
+  height: max(var(--rope-h), calc(var(--knot-w) * .6));
+  margin: 22px 0;
+  pointer-events: none;
+}
+
+/* mezze cime */
+.rope-divider .rope{
+  position: absolute;
+  top: 50%;
+  height: var(--rope-h);
+  transform: translateY(-50%);
+  background-image: var(--rope-url);
+  background-repeat: repeat-x;
+  background-size: auto var(--rope-h);
+  image-rendering: -webkit-optimize-contrast;
+}
+
+/* sinistra: fino a metà meno mezzo nodo */
+.rope-divider .rope--left{
+  left: 0;
+  width: calc(50% - var(--knot-w) / 2);
+  /* allineamento fase: sposto la texture verso destra */
+  background-position: calc(100% + var(--left-phase)) 50%;
+  /* dissolvenza sul bordo destro (verso il nodo) */
+  -webkit-mask-image: linear-gradient(to right, #000 0 calc(100% - var(--blend)), transparent 100%);
+          mask-image: linear-gradient(to right, #000 0 calc(100% - var(--blend)), transparent 100%);
+}
+
+/* destra: da metà più mezzo nodo alla fine */
+.rope-divider .rope--right{
+  right: 0;
+  width: calc(50% - var(--knot-w) / 2);
+  /* allineamento fase: sposto la texture verso sinistra */
+  background-position: var(--right-phase) 50%;
+  /* dissolvenza sul bordo sinistro (verso il nodo) */
+  -webkit-mask-image: linear-gradient(to right, transparent 0 var(--blend), #000 var(--blend) 100%);
+          mask-image: linear-gradient(to right, transparent 0 var(--blend), #000 var(--blend) 100%);
+}
+
+/* nodo al centro sopra tutto */
+.rope-divider .knot{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: var(--knot-w);
+  transform: translate(-50%, -50%);
+  aspect-ratio: 2.2 / 1;     /* ok per il tuo PNG; regola se serve */
+  background: var(--knot-url) center / contain no-repeat;
+  z-index: 2;
+  filter: drop-shadow(0 2px 6px rgba(0,0,0,.14)); /* leggero 3D */
+}
