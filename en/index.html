@@ -3,24 +3,60 @@
 <head>
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <title>Pria Aurora – Dream & Breakfast by the Sea | Pegli Genoa</title>
-  <meta name="description" content="B&B by the sea in Pegli (Western Genoa). Sea view, comfort and small attentions. Book directly at the best price."/>
-  <meta name="keywords" content="Pegli, Genoa, B&B, bed and breakfast, seaside house, hotel, Western Genoa, sea, cliffs, sea view"/>
-  <link rel="icon" href="assets/logo_B.png" type="image/png"/>
+  <title>Pria Aurora – Dream & Breakfast by the Sea | Pegli, Genoa</title>
+  <meta name="description" content="B&B by the sea in Pegli (Genoa West). Sea view, comfort and small attentions. Book directly at the best price."/>
+  <meta name="keywords" content="Pegli, Genoa, B&B, bed and breakfast, sea house, hotel, sea view, cliffs, Genova Ponente"/>
+  <link rel="icon" href="/assets/logo_B.png" type="image/png"/>
   <link rel="alternate" hreflang="it" href="/"/>
+
+  <!-- Tailwind (CDN) -->
   <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="assets/css/style.css"/>
-  <style>.hero{background-image:url('assets/images/Aurora_Pegli.jpg');}</style>
+  <link rel="stylesheet" href="/assets/css/style.css"/>
+
+  <!-- Structured data -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"LodgingBusiness",
+    "name":"Pria Aurora – Dream & Breakfast",
+    "url":"https://priaaurora.com/en/",
+    "image":["https://priaaurora.com/assets/images/A_mobile-friendly_webpage_for_%22Pria_Aurora_Dream_a.jpg"],
+    "address":{"@type":"PostalAddress","streetAddress":"Via Benedetto Zaccaria 2/1","addressLocality":"Genova Pegli","postalCode":"16155","addressCountry":"IT"},
+    "telephone":"+39 345 8449179",
+    "amenityFeature":[
+      {"@type":"LocationFeatureSpecification","name":"Air conditioning in all rooms","value":true},
+      {"@type":"LocationFeatureSpecification","name":"Smart TV in each room (65” in the lounge) with Disney+, Netflix, Prime Video","value":true},
+      {"@type":"LocationFeatureSpecification","name":"High‑speed Wi‑Fi","value":true},
+      {"@type":"LocationFeatureSpecification","name":"Full kitchen: induction, dishwasher, oven, microwave, Nespresso Vertuo","value":true},
+      {"@type":"LocationFeatureSpecification","name":"Extendable dining table and breakfast peninsula","value":true},
+      {"@type":"LocationFeatureSpecification","name":"Sea view and three windows over the rocks","value":true},
+      {"@type":"LocationFeatureSpecification","name":"Bathroom with double sinks, suspended sanitary ware and rain shower","value":true},
+      {"@type":"LocationFeatureSpecification","name":"Pet‑friendly upon notice","value":true}
+    ]
+  }
+  </script>
+
+  <!-- Hero background fallback -->
+  <style>.hero{background-image:url('/assets/images/Aurora_Pegli.jpg');}</style>
+
+  <!-- Swiper (slider) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+  <!-- GLightbox (lightbox) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
 </head>
+
 <body class="bg-slate-50 text-slate-800">
-<header class="hero" style="background-image:url('assets/images/aurora_Pegli.jpg')">
+<header class="hero" style="background-image:url('/assets/images/aurora_Pegli.jpg')">
   <div class="hero__stage max-w-6xl mx-auto px-4">
-    <!-- Language switch -->
+    <!-- language switch -->
     <div class="hero__lang"><a href="/">Italiano</a></div>
 
-    <!-- Center: logo + title + CTA -->
+    <!-- center: brand + title + CTA -->
     <div class="hero__center">
-      <img src="assets/logo.png" alt="Pria Aurora" class="hero__brand">
+      <img src="/assets/logo.png" alt="Pria Aurora" class="hero__brand">
       <h1 class="hero__title">Dream &amp; Breakfast by the Sea</h1>
       <p class="hero__subtitle">Welcome to PriaAurora.com — Pegli, Genoa.</p>
 
@@ -29,72 +65,268 @@
         <a href="#booking" class="btn btn--primary">Book</a>
       </div>
     </div>
+
+    <!-- dock left: portals + socials (desktop) -->
+    <div class="hero__dockLeft">
+      <a class="pill-icon" href="#" aria-label="Booking.com">
+        <img src="/assets/icons/booking.svg" alt="">
+      </a>
+      <a class="pill-icon" href="#" aria-label="Airbnb">
+        <img src="/assets/icons/airbnb.svg" alt="">
+      </a>
+
+      <a class="social" href="https://www.facebook.com/share/16jDfU6vb7/?mibextid=wwXIfr" aria-label="Facebook">
+        <img src="/assets/icons/facebook.svg" alt="">
+      </a>
+      <a class="social" href="#" aria-label="Instagram">
+        <img src="/assets/icons/instagram.svg" alt="">
+      </a>
+      <a class="social" href="#" aria-label="TikTok">
+        <img src="/assets/icons/tiktok.svg" alt="">
+      </a>
+      <a class="social" href="https://wa.me/393458449179?text=Dear%20Alice,%20Captain%20of%20Pria%20Aurora,%20I%20am%20contacting%20you%20about%20..." aria-label="WhatsApp">
+        <img src="/assets/icons/whatsapp.svg" alt="">
+      </a>
+    </div>
   </div>
 </header>
 
+<!-- ABOUT -->
 <section id="about" class="max-w-6xl mx-auto px-4 py-12 sm:py-16">
   <div class="grid md:grid-cols-2 gap-8 items-start">
-    <!-- Text column -->
+    <!-- text column -->
     <div>
       <h2 class="text-2xl font-semibold mb-1">Welcome on board</h2>
       <p class="leading-relaxed whitespace-pre-line">
-        Our Dream &amp; Breakfast overlooks the sea, nestled among the cliffs of Pegli.  
-        A strategic and unique location: next to the bus stop, close to the train station and the pier from which the ferry takes you directly to the Old Port of Genoa.  
-        Yet, once you cross the threshold, the world seems to stop, silence begins and your land-cruise sets sail.  
-        In a cozy setting, below street level, with the cliffs at your back and the infinite blue in front, the only sound that reaches the window is that of the waves caressing the shore.  
-        A retreat suspended between comfort and poetry, where the sea sets the rhythm of the days.
+Our Dream &amp; Breakfast overlooks the sea, nestled among the cliffs of Pegli.
+A strategic and unique location: next to the bus stop, close to the train station and the pier from which the ferry takes you directly to the Old Port of Genoa.
+Yet, once you cross the threshold, the world seems to stop, silence begins and your land‑cruise sets sail.
+In a cozy setting, below street level, with the cliffs at your back and the infinite blue in front, the only sound that reaches the window is that of the waves caressing the shore.
+A retreat suspended between comfort and poetry, where the sea sets the rhythm of the days.
       </p>
 
       <ul class="mt-4 space-y-2 list-disc pl-6">
-        <li><strong>The Captain’s Suite</strong> Inspired by luxury ship cabins.  
-An elegant and comfortable environment that recalls the charm of seafaring style.  
-The suite is equipped with air conditioning, a flat-screen TV and a charming sea view.  
-It features a comfortable double bed, a functional writing desk and a nautical-style wardrobe, combining practicality and design.  
-The carefully curated decor creates a refined and welcoming atmosphere, ideal for an unforgettable stay with all the comforts at hand.</li>
+        <li><strong>The Captain’s Suite</strong> Inspired by luxury ship cabins.<br>
+An elegant, comfortable environment that recalls the charm of seafaring style. The suite features air conditioning, a flat‑screen TV and a beautiful sea outlook that invites pure relaxation. A cozy double bed, a functional writing desk and a nautical‑style wardrobe combine practicality and design. Carefully curated details create a refined, welcoming atmosphere—ideal for an unforgettable stay with every comfort at hand.</li>
 
-        <li><strong>The Commodore’s Cabin</strong> A versatile space that transforms as needed: during the day it serves as a <em>second lounge</em>, perfect for relaxation or reading, while at night it becomes a <strong>second double bedroom</strong>, intimate and comfortable.  
-Equipped with a practical <strong>sofa bed with frame</strong> and a <strong>Smart TV</strong>, the cabin is designed to provide comfort and functionality.  
-A handy <strong>open wardrobe</strong> and spacious <strong>storage units</strong> complete the room, making it ideal as an additional bedroom with two extra beds.  
-A cozy retreat, perfect both as an extension of the living area and to host family or friends.</li>
+        <li><strong>The Commodore’s Cabin</strong> A versatile space that adapts to your needs: a cozy <em>second lounge</em> by day and a comfortable <strong>second double bedroom</strong> by night. Equipped with a <strong>double sofa bed with slatted frame</strong> and a <strong>Smart TV</strong> for your downtime. A handy <strong>open wardrobe</strong> and extra <strong>storage</strong> make it perfect as a true second bedroom with two additional beds.</li>
 
-        <li><strong>The Pier – Sea View Lounge</strong> A spacious living area combining modern comfort and maritime charm.  
-Furnished with a <strong>6-seater sofa</strong>, an <strong>extendable dining table</strong>, a <strong>65” Smart TV</strong> with Disney+, Netflix and Prime Video, and a <strong>home theatre system</strong>, it is the ideal space for convivial moments.  
-A large panoramic opening offers a <strong>breathtaking sea view</strong>, where the blue merges with the natural light flooding the space.</li>
+        <li><strong>The Pier – Sea‑view Lounge</strong> A generous living area blending modern comfort and nautical charm: a <strong>6‑seater sofa</strong>, <strong>extendable dining table</strong>, <strong>65” Smart TV</strong> with Disney+, Netflix and Prime Video, and a <strong>home theatre system</strong>. A large panoramic opening gifts a <strong>stunning sea view</strong> and floods the room with natural light.</li>
 
-        <li><strong>The Galley – Modern Kitchen</strong> A functional, contemporary design, fully equipped with induction hob, dishwasher, oven, microwave and Nespresso Vertuo machine.  
-A practical <strong>breakfast island</strong> makes it perfect both for intimate breakfasts and convivial dinners.  
-Two <strong>corner windows</strong> flood the space with natural light and open directly onto the sea, offering a <strong>unique view of the cliffs and the infinite blue</strong>.  
-An environment that blends practicality and poetry, where every detail is designed to make your experience memorable.</li>
+        <li><strong>The Galley – Modern Kitchen</strong> Functional, contemporary and fully equipped: induction hob, dishwasher, oven, microwave and Nespresso Vertuo. A practical <strong>breakfast peninsula</strong> is perfect for intimate mornings or convivial evenings. Two <strong>corner windows</strong> bathe the room in daylight and open directly onto the sea, offering a <strong>unique view over the rocks and the endless blue</strong>.</li>
 
-        <li><strong>The Bathroom – The Toilette</strong> A modern, functional space with <strong>double sink</strong>, <strong>large mirrors with dedicated lighting</strong>, <strong>rain shower</strong> with <strong>large showerhead</strong> and <strong>hand shower</strong>, <strong>wall-mounted sanitary ware</strong>, <strong>heated towel rack</strong> and <strong>hairdryer</strong>.  
-Featuring glossy red cabinets with <strong>ample storage space</strong>, this refined and welcoming bathroom is designed for maximum comfort.</li>
+        <li><strong>The Bathroom – The Toilet</strong> A modern, functional space with <strong>double sinks</strong>, <strong>large mirrors with dedicated lighting</strong>, <strong>rain shower</strong> with <strong>wide showerhead</strong> and <strong>handset</strong>, <strong>suspended sanitary ware</strong>, <strong>heated towel rail</strong> and <strong>hair dryer</strong>. Glossy red storage provides <strong>generous capacity</strong>—a refined, comfortable toilet designed for maximum ease.</li>
       </ul>
 
-      <p class="mt-4"><strong>Pets are welcome, upon prior notice.</strong></p>
+      <p class="mt-4"><strong>Pets are welcome with prior notice.</strong></p>
 
-      <h3 class="mt-6 text-xl font-semibold">Included Comforts</h3>
+      <h3 class="mt-6 text-xl font-semibold">Included comforts</h3>
       <ul class="list-disc pl-6 mt-2 space-y-1">
         <li>Air conditioning in all rooms</li>
-        <li>Smart TV in every room: 65” in the living room, 32" in the bedrooms</li>
-        <li>High-speed Wi-Fi</li>
-        <li>Fully equipped kitchen: induction, hood, oven, microwave, Nespresso</li>
-        <li>Modern washing machine and dishwasher</li>
-        <li>Clothesline by the sea (in traditional Genoese style)</li>
-        <li>Extendable dining table and breakfast island</li>
-        <li>South-facing, with sea view from all rooms and large double-glazed windows</li>
-        <li>Bathroom with double sinks, wall-mounted sanitary ware and rain shower</li>
-        <li>Heated towel rack and hairdryer</li>
-        <li>Pet-friendly on request</li>
+        <li>Smart TV in every room: 65” in the lounge, 32" in bedrooms</li>
+        <li>High‑speed Wi‑Fi</li>
+        <li>Full kitchen: induction, hood, oven, microwave, Nespresso</li>
+        <li>Washing machine and next‑gen dishwasher</li>
+        <li>Traditional Genoese clothesline from the windows over the sea</li>
+        <li>Extendable dining table and breakfast peninsula</li>
+        <li>South‑facing: sea view from all rooms; panoramic double‑glazed windows</li>
+        <li>Bathroom with double sinks, suspended sanitary ware and rain shower</li>
+        <li>Heated towel rail and hair dryer</li>
+        <li>Pet‑friendly upon notice</li>
       </ul>
     </div>
 
-    <!-- Image column -->
+    <!-- images column: one per row -->
     <div class="grid grid-cols-1 gap-5">
-      <figure class="rounded-xl overflow-hidden shadow"><img src="Galleria/Suite.png" alt="The Captain’s Suite" class="w-full h-full object-cover aspect-[3/2]"/></figure>
-      <figure class="rounded-xl overflow-hidden shadow"><img src="Galleria/Cabina.png" alt="The Commodore’s Cabin" class="w-full h-full object-cover aspect-[3/2]"/></figure>
-      <figure class="rounded-xl overflow-hidden shadow"><img src="Galleria/Pontile.png" alt="The Pier – Lounge" class="w-full h-full object-cover aspect-[3/2]"/></figure>
-      <figure class="rounded-xl overflow-hidden shadow"><img src="Galleria/Cucina.png" alt="The Galley – Kitchen" class="w-full h-full object-cover aspect-[3/2]"/></figure>
-      <figure class="rounded-xl overflow-hidden shadow"><img src="Galleria/Bagno.png" alt="The Bathroom" class="w-full h-full object-cover aspect-[3/2]"/></figure>
+      <figure class="rounded-xl overflow-hidden shadow">
+        <img src="/Gallery/Suite.png" alt="The Captain’s Suite" loading="lazy" class="w-full h-full object-cover aspect-[3/2]"/>
+      </figure>
+      <figure class="rounded-xl overflow-hidden shadow">
+        <img src="/Gallery/Cabina.png" alt="The Commodore’s Cabin" loading="lazy" class="w-full h-full object-cover aspect-[3/2]"/>
+      </figure>
+      <figure class="rounded-xl overflow-hidden shadow">
+        <img src="/Gallery/Pontile.png" alt="The Pier – Lounge" loading="lazy" class="w-full h-full object-cover aspect-[3/2]"/>
+      </figure>
+      <figure class="rounded-xl overflow-hidden shadow">
+        <img src="/Gallery/Cucina.png" alt="The Galley – Kitchen" loading="lazy" class="w-full h-full object-cover aspect-[3/2]"/>
+      </figure>
+      <figure class="rounded-xl overflow-hidden shadow">
+        <img src="/Gallery/Bagno.png" alt="The Bathroom" loading="lazy" class="w-full h-full object-cover aspect-[3/2]"/>
+      </figure>
     </div>
   </div>
 </section>
+
+<!-- GALLERY (Swiper + GLightbox) -->
+<section id="gallery" class="bg-white border-y">
+  <div class="max-w-6xl mx-auto px-4 py-12 sm:py-16">
+    <h2 class="text-2xl font-semibold mb-6">Gallery</h2>
+
+    <div class="gallery relative">
+      <!-- main slider -->
+      <div class="swiper gallery__main rounded-xl overflow-hidden shadow">
+        <div class="swiper-wrapper">
+          <!-- same images as IT page -->
+          <div class="swiper-slide">
+            <a href="/assets/images/0B442338-E570-4A8B-90B4-847623991D73.jpg" class="glightbox" data-gallery="pa">
+              <img src="/assets/images/0B442338-E570-4A8B-90B4-847623991D73.jpg" alt="Pria Aurora – Gallery" loading="lazy" class="w-full h-[380px] md:h-[520px] object-cover">
+            </a>
+          </div>
+          <div class="swiper-slide">
+            <a href="/assets/images/00817E89-058E-4A1A-B953-C8DBE77441B8.jpg" class="glightbox" data-gallery="pa">
+              <img src="/assets/images/00817E89-058E-4A1A-B953-C8DBE77441B8.jpg" alt="Pria Aurora – Gallery" loading="lazy" class="w-full h-[380px] md:h-[520px] object-cover">
+            </a>
+          </div>
+          <div class="swiper-slide">
+            <a href="/assets/images/06391DDB-ED64-4040-B1CE-4F540FAA0EFB.jpg" class="glightbox" data-gallery="pa">
+              <img src="/assets/images/06391DDB-ED64-4040-B1CE-4F540FAA0EFB.jpg" alt="Pria Aurora – Gallery" loading="lazy" class="w-full h-[380px] md:h-[520px] object-cover">
+            </a>
+          </div>
+          <div class="swiper-slide">
+            <a href="/assets/images/10B2CADF-4621-4D2A-815D-2BD2EE5A0449.jpg" class="glightbox" data-gallery="pa">
+              <img src="/assets/images/10B2CADF-4621-4D2A-815D-2BD2EE5A0449.jpg" alt="Pria Aurora – Gallery" loading="lazy" class="w-full h-[380px] md:h-[520px] object-cover">
+            </a>
+          </div>
+          <div class="swiper-slide">
+            <a href="/assets/images/15329580-59F8-4574-AD3B-766A3D90A388.jpg" class="glightbox" data-gallery="pa">
+              <img src="/assets/images/15329580-59F8-4574-AD3B-766A3D90A388.jpg" alt="Pria Aurora – Gallery" loading="lazy" class="w-full h-[380px] md:h-[520px] object-cover">
+            </a>
+          </div>
+          <!-- ...continua con gli altri path identici, tutti root-relative... -->
+        </div>
+
+        <!-- arrows -->
+        <div class="gallery-prev absolute left-2 top-1/2 -translate-y-1/2 z-10 cursor-pointer bg-white/90 hover:bg-white rounded-full p-2 shadow">&#10094;</div>
+        <div class="gallery-next absolute right-2 top-1/2 -translate-y-1/2 z-10 cursor-pointer bg-white/90 hover:bg-white rounded-full p-2 shadow">&#10095;</div>
+      </div>
+
+      <!-- thumbs -->
+      <div class="swiper gallery__thumbs mt-3">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide"><img src="/assets/images/0B442338-E570-4A8B-90B4-847623991D73.jpg" class="w-full h-24 object-cover rounded-md"></div>
+          <div class="swiper-slide"><img src="/assets/images/00817E89-058E-4A1A-B953-C8DBE77441B8.jpg" class="w-full h-24 object-cover rounded-md"></div>
+          <div class="swiper-slide"><img src="/assets/images/06391DDB-ED64-4040-B1CE-4F540FAA0EFB.jpg" class="w-full h-24 object-cover rounded-md"></div>
+          <div class="swiper-slide"><img src="/assets/images/10B2CADF-4621-4D2A-815D-2BD2EE5A0449.jpg" class="w-full h-24 object-cover rounded-md"></div>
+          <div class="swiper-slide"><img src="/assets/images/15329580-59F8-4574-AD3B-766A3D90A388.jpg" class="w-full h-24 object-cover rounded-md"></div>
+          <!-- ...idem per tutte... -->
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ROUTE -->
+<section id="route" class="max-w-6xl mx-auto px-4 py-12 sm:py-16">
+  <h2 class="text-2xl font-semibold mb-4">Set your route</h2>
+  <ul class="list-disc pl-6 space-y-1">
+    <li>Villa Pallavicini – historical park 5 minutes away</li>
+    <li>Old Port – Aquarium, Bigo and promenade</li>
+    <li>UNESCO Historic Centre – Via Garibaldi, De Ferrari</li>
+    <li>Waterbus from Molo Archetti → Old Port</li>
+  </ul>
+</section>
+
+<!-- BOOKING -->
+<section id="booking" class="max-w-6xl mx-auto px-4 py-12 sm:py-16">
+  <div class="grid md:grid-cols-2 gap-10 items-start">
+    <div>
+      <h2 class="text-2xl font-semibold mb-4">Availability & bookings</h2>
+      <div class="rounded-xl overflow-hidden shadow">
+        <iframe src="https://calendar.google.com/calendar/embed?src=a4c463ed950c9adf48c4b052b3d8fc68cf1c69cdcb63250a48f09bb837139c41%40group.calendar.google.com&ctz=Europe%2FRome" style="border:0" width="100%" height="450" frameborder="0" scrolling="no" loading="lazy"></iframe>
+      </div>
+      <p class="text-sm mt-3 text-slate-600">Or from the booking portals.</p>
+    </div>
+
+    <form name="contact" method="POST" data-netlify="true" class="bg-white rounded-xl shadow p-6 space-y-4">
+      <input type="hidden" name="form-name" value="contact"/>
+      <div>
+        <label class="block text-sm font-medium">Name</label>
+        <input name="nome" required class="mt-1 w-full border rounded-lg px-3 py-2"/>
+      </div>
+      <div class="grid sm:grid-cols-2 gap-4">
+        <div>
+          <label class="block text-sm font-medium">Email</label>
+          <input name="email" type="email" required class="mt-1 w-full border rounded-lg px-3 py-2"/>
+        </div>
+        <div>
+          <label class="block text-sm font-medium">Phone</label>
+          <input name="telefono" class="mt-1 w-full border rounded-lg px-3 py-2"/>
+        </div>
+      </div>
+      <div class="grid sm:grid-cols-2 gap-4">
+        <div>
+          <label class="block text-sm font-medium">Check‑in</label>
+          <input name="checkin" type="date" class="mt-1 w-full border rounded-lg px-3 py-2"/>
+        </div>
+        <div>
+          <label class="block text-sm font-medium">Check‑out</label>
+          <input name="checkout" type="date" class="mt-1 w-full border rounded-lg px-3 py-2"/>
+        </div>
+      </div>
+      <div>
+        <label class="block text-sm font-medium">Message</label>
+        <textarea name="messaggio" rows="4" class="mt-1 w-full border rounded-lg px-3 py-2"></textarea>
+      </div>
+      <div class="flex items-center gap-2">
+        <button class="px-5 py-3 rounded-lg bg-sky-500 hover:bg-sky-600 text-white font-semibold">Send</button>
+        <a href="https://wa.me/393458449179?text=Dear%20Alice,%20Captain%20of%20Pria%20Aurora,%20I%20am%20contacting%20you%20about%20..." class="px-5 py-3 rounded-lg bg-emerald-500 hover:bg-emerald-600 text-white font-semibold">WhatsApp</a>
+      </div>
+    </form>
+  </div>
+</section>
+
+<!-- MAP -->
+<section id="map" class="bg-slate-100">
+  <div class="max-w-6xl mx-auto px-4 py-12 sm:py-16">
+    <h2 class="text-2xl font-semibold mb-4">Where we are</h2>
+    <p class="mb-3">Via Benedetto Zaccaria 2/1 – Genova Pegli (GE)</p>
+    <div class="rounded-xl overflow-hidden shadow">
+      <iframe src="https://www.google.com/maps?q=Via%20Benedetto%20Zaccaria%202%2F1%2C%20Genova%20Pegli&output=embed" class="w-full h-80 border-0" loading="lazy"></iframe>
+    </div>
+  </div>
+</section>
+
+<footer class="bg-slate-900 text-slate-200">
+  <div class="max-w-6xl mx-auto px-4 py-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+    <div class="flex items-center gap-3">
+      <img src="/assets/logo.png" alt="Pria Aurora" class="w-8 h-8"/>
+      <span>© 2025 Pria Aurora – Genova Pegli</span>
+    </div>
+    <a href="mailto:priaaurora.bnb@gmail.com" class="hover:underline">priaaurora.bnb@gmail.com</a>
+  </div>
+</footer>
+
+<!-- floating WhatsApp (shows after scroll on mobile) -->
+<a href="https://wa.me/393458449179?text=Dear%20Alice,%20Captain%20of%20Pria%20Aurora,%20I%20am%20contacting%20you%20about%20..."
+   class="wa-fixed fixed bottom-5 right-5 bg-emerald-500 hover:bg-emerald-600 text-white rounded-full shadow-lg px-4 py-3 font-semibold"
+   aria-label="WhatsApp">WhatsApp</a>
+
+<script>
+  // WhatsApp show-on-scroll (and hide social dock)
+  document.addEventListener("DOMContentLoaded", function(){
+    const waBtn = document.querySelector(".wa-fixed");
+    const dockLeft = document.querySelector(".hero__dockLeft");
+    if (waBtn && dockLeft) {
+      window.addEventListener("scroll", function(){
+        if (window.scrollY > 150) { waBtn.classList.add("visible"); dockLeft.classList.add("hidden"); }
+        else { waBtn.classList.remove("visible"); dockLeft.classList.remove("hidden"); }
+      });
+    }
+  });
+
+  // Swiper thumbs
+  const galleryThumbs = new Swiper('.gallery__thumbs', {
+    slidesPerView: 4, spaceBetween: 8, freeMode: true, watchSlidesProgress: true,
+    breakpoints:{640:{slidesPerView:6},1024:{slidesPerView:9}}
+  });
+  // Swiper main
+  const galleryMain = new Swiper('.gallery__main', {
+    spaceBetween: 10, loop: true,
+    navigation:{ nextEl:'.gallery-next', prevEl:'.gallery-prev' },
+    thumbs:{ swiper: galleryThumbs }
+  });
+  // GLightbox
+  const lightbox = GLightbox({ selector: '.glightbox', touchNavigation: true, loop: true });
+</script>
+</body>
+</html>
