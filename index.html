@@ -19,7 +19,14 @@
 <!-- GLightbox (lightbox) -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css">
 <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
-
+<script>
+  // Imposta --vh in base a window.innerHeight (mobile Chrome safe)
+  function setVH(){
+    document.documentElement.style.setProperty('--vh', (window.innerHeight * 0.01) + 'px');
+  }
+  setVH();
+  window.addEventListener('resize', setVH);
+</script>
 </head>
 <body class="bg-slate-50 text-slate-800">
 <header class="hero" style="background-image:url('assets/images/aurora_Pegli.jpg')">
