@@ -43,12 +43,31 @@
 }
 
 /* ---------- HERO + cinema ---------- */
-.hero{
+/*.hero{
   position:relative;
   background-size:cover; background-position:center; background-repeat:no-repeat;
   min-height: var(--hero-min-h-mobile);
 }
-@media (min-width:1024px){ .hero{ min-height: var(--hero-min-h-desktop); } }
+@media (min-width:1024px){ .hero{ min-height: var(--hero-min-h-desktop); } }*/
+
+/* HERO full screen robusto per mobile/desktop */
+.hero{
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  /* Fallback + nuovi unit dinamici */
+  min-height: 100vh;    /* fallback vecchi browser */
+  min-height: 100svh;   /* small viewport height (iOS) */
+  min-height: 100lvh;   /* large viewport height */
+  min-height: 100dvh;   /* dynamic viewport height (Chrome moderno) */
+}
+
+/* se usi la variante desktop separata, puoi lasciarla: non serve più, ma non fa danni */
+@media (min-width:1024px){
+  .hero{ min-height: 100dvh; }
+}
 
 .hero::before{
   content:""; position:absolute; inset:0;
