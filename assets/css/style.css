@@ -69,6 +69,10 @@
   .hero{ min-height: 100dvh; }
 }
 
+.hero{
+  min-height: calc(var(--vh, 1vh) * 100);
+}
+
 .hero::before{
   content:""; position:absolute; inset:0;
   background: rgba(0,0,0,.30); pointer-events:none;
