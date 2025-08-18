@@ -354,3 +354,23 @@
   z-index: 2;
   filter: drop-shadow(0 2px 6px rgba(0,0,0,.14)); /* leggero 3D */
 }
+/* =========================================================
+   FIX — Lightbox immagini full screen su smartphone
+   ========================================================= */
+.glightbox-container .ginner-container {
+  max-width: 100vw !important;
+  width: 100vw !important;
+  height: 100vh !important;
+}
+.glightbox-container .gslide {
+  padding: 0 !important;
+}
+.glightbox-container .gslide-image img {
+  width: 100vw !important;
+  height: 100vh !important;
+  object-fit: contain; /* se vuoi “ritagliare” usa cover */
+  background: #000;
+}
+.glightbox-container .gslide-description {
+  display: none !important;
+}
